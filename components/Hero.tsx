@@ -6,22 +6,22 @@ import "swiper/css";
 import "swiper/css/effect-creative";
 import "swiper/css/pagination";
 
-// Main slider images (horizontal)
+// Main slider — local Gulaal assets (square images, match 625×611 slot perfectly)
 const mainSlides = [
-    "/isomeet/6908eaa020eecfd681121acf_hero-slide-1-img-1.avif",
-    "/isomeet/6908eaa03ca3b733f5b55d74_hero-slide-2-img-1.avif",
-    "/isomeet/6908eaa0e74a211f5605758c_hero-slide-3-img-1.avif",
-    "/isomeet/6908eaa045537dccaaf8a29d_hero-slide-4-img-1.avif",
-    "/isomeet/6908eaa08dc1cd6373fb8c1a_hero-slide-5-img-1.avif",
+    "/gulaal/gulaal_boardroom_team_1771393356431.png",
+    "/gulaal/gulaal_project_site_dubai_1771393234972.png",
+    "/gulaal/gulaal_ecommerce_warehouse_1771393255646.png",
+    "/gulaal/gulaal_construction_site_1771392960399.png",
+    "/gulaal/gulaal_pm_office_1771392911229.png",
 ];
 
-// Secondary slider images (vertical creative)
+// Secondary slider — different Gulaal assets, cropped landscape via object-fit
 const secondarySlides = [
-    "/isomeet/6908eaa08f873b1b8e9f2260_hero-slide-1-img-2.avif",
-    "/isomeet/6908eaa1a496e8044c51f8e7_hero-slide-2-img-2.avif",
-    "/isomeet/6908eaa0a826889d83292f9e_hero-slide-3-img-2.avif",
-    "/isomeet/6908eaa0bb44071f5696a011_hero-slide-4-img-2.avif",
-    "/isomeet/6908eaa0a912a88208184ff3_hero-slide-5-img-2.avif",
+    "/gulaal/gulaal_ecommerce_ops_1771393005370.png",
+    "/gulaal/gulaal_boardroom_team_1771393476158.png",
+    "/gulaal/gulaal_construction_site_1771393420757.png",
+    "/gulaal/gulaal_pm_site_meeting_1771393042210.png",
+    "/gulaal/gulaal_ecommerce_ops_1771393316385.png",
 ];
 
 export default function Hero() {
@@ -427,10 +427,11 @@ export default function Hero() {
                                                     height={111}
                                                     style={{
                                                         width: "16.875rem",
-                                                        height: "auto",
-                                                        display: "inline-block",
+                                                        height: "6.9375rem",
+                                                        display: "block",
+                                                        objectFit: "cover",
+                                                        objectPosition: "center 30%",
                                                         maxWidth: "100%",
-                                                        verticalAlign: "middle",
                                                     }}
                                                 />
                                             </div>

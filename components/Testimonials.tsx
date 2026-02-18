@@ -1,143 +1,212 @@
 "use client";
-
-import { useEffect, useRef } from "react";
-import { Star, Quotes } from "@phosphor-icons/react";
+import { motion } from "motion/react";
+import { TestimonialsColumn } from "./ui/TestimonialsColumn";
 
 const testimonials = [
+    // Column 1
     {
+        text: "Gulaal International transformed our e-commerce presence completely. Within 8 months, our online revenue grew by 340%. They don't just execute — they think like owners.",
+        image: "https://randomuser.me/api/portraits/women/44.jpg",
         name: "Sarah Al-Mansoori",
-        role: "CEO, Bloom Fashion",
-        location: "Dubai, UAE",
-        quote:
-            "Gulaal International transformed our e-commerce presence completely. Within 8 months, our online revenue grew by 340%. They don't just execute — they think like owners.",
-        rating: 5,
-        initials: "SM",
+        role: "CEO, Bloom Fashion · Dubai",
     },
     {
+        text: "We had a complex ERP implementation that was going nowhere. Gulaal's PM team stepped in, restructured the entire project, and delivered on time. Exceptional professionalism.",
+        image: "https://randomuser.me/api/portraits/men/32.jpg",
         name: "Khalid Al-Rashidi",
-        role: "COO, TechBridge Solutions",
-        location: "Abu Dhabi, UAE",
-        quote:
-            "We had a complex ERP implementation that was going nowhere. Gulaal's PM team stepped in, restructured the entire project, and delivered on time. Exceptional professionalism.",
-        rating: 5,
-        initials: "KR",
+        role: "COO, TechBridge Solutions · Abu Dhabi",
     },
     {
+        text: "From Shopify setup to Amazon UAE integration — they handled everything. Our F&B brand is now selling across 4 platforms with zero operational headaches on our end.",
+        image: "https://randomuser.me/api/portraits/women/68.jpg",
         name: "Priya Nair",
-        role: "Founder, Spice Route Foods",
-        location: "Sharjah, UAE",
-        quote:
-            "From Shopify setup to Amazon UAE integration — they handled everything. Our F&B brand is now selling across 4 platforms with zero operational headaches on our end.",
-        rating: 5,
-        initials: "PN",
+        role: "Founder, Spice Route Foods · Sharjah",
+    },
+    // Column 2
+    {
+        text: "Their project management methodology is world-class. They brought structure and clarity to a chaotic product launch. We hit our go-live date for the first time in company history.",
+        image: "https://randomuser.me/api/portraits/men/54.jpg",
+        name: "Tariq Al-Farsi",
+        role: "VP Operations, NovaTech · Dubai",
+    },
+    {
+        text: "Gulaal set up our entire Noon and Amazon seller accounts, handled cataloguing, and ran our first campaign. Sales in month one exceeded our quarterly target.",
+        image: "https://randomuser.me/api/portraits/women/12.jpg",
+        name: "Meera Pillai",
+        role: "E-commerce Lead, Zest Organics · Ajman",
+    },
+    {
+        text: "I was skeptical about outsourcing project management, but Gulaal proved me wrong. Their team embedded with ours seamlessly and delivered a complex migration on schedule.",
+        image: "https://randomuser.me/api/portraits/men/76.jpg",
+        name: "Faisal Al-Hamdan",
+        role: "CTO, Meridian Logistics · Abu Dhabi",
+    },
+    // Column 3
+    {
+        text: "The team understood our brand instantly. They built our Shopify store, wrote the copy, set up the payment gateway — all in three weeks. Absolutely remarkable speed.",
+        image: "https://randomuser.me/api/portraits/women/29.jpg",
+        name: "Nadia Osman",
+        role: "Founder, Saffron & Co · Dubai",
+    },
+    {
+        text: "Gulaal's e-commerce audit revealed gaps we didn't even know existed. After implementing their recommendations, our conversion rate doubled within 60 days.",
+        image: "https://randomuser.me/api/portraits/men/18.jpg",
+        name: "Rajan Mehta",
+        role: "Head of Digital, Gulf Retail Group · Ras Al Khaimah",
+    },
+    {
+        text: "Professional, responsive, and genuinely invested in our success. They treated our startup like it was their own. That's rare to find in any market, let alone the UAE.",
+        image: "https://randomuser.me/api/portraits/women/55.jpg",
+        name: "Layla Hassan",
+        role: "Co-founder, Luma Skincare · Sharjah",
     },
 ];
 
+const firstColumn = testimonials.slice(0, 3);
+const secondColumn = testimonials.slice(3, 6);
+const thirdColumn = testimonials.slice(6, 9);
+
 export default function Testimonials() {
-    const ref = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((e) => {
-                    if (e.isIntersecting) e.target.classList.add("visible");
-                });
-            },
-            { threshold: 0.1 }
-        );
-        ref.current?.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-        return () => observer.disconnect();
-    }, []);
-
     return (
-        <section className="section-padding" ref={ref}>
-            <div className="container-gi">
-                {/* Header */}
-                <div className="reveal mb-14 max-w-2xl">
-                    <p
-                        className="text-xs font-medium uppercase tracking-widest mb-4"
-                        style={{ color: "var(--color-accent)" }}
+        <section
+            style={{
+                background: "#fff",
+                paddingTop: "8.25rem",
+                paddingBottom: "8.25rem",
+                position: "relative",
+                overflow: "hidden",
+            }}
+        >
+            <div
+                style={{
+                    width: "100%",
+                    maxWidth: "83rem",
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                    paddingLeft: "3.5rem",
+                    paddingRight: "3.5rem",
+                    position: "relative",
+                    zIndex: 10,
+                }}
+            >
+                {/* Section header */}
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+                    viewport={{ once: true }}
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        maxWidth: "34rem",
+                        marginLeft: "auto",
+                        marginRight: "auto",
+                        textAlign: "center",
+                        marginBottom: "4rem",
+                    }}
+                >
+                    {/* Pill label */}
+                    <div
+                        style={{
+                            display: "inline-flex",
+                            justifyContent: "center",
+                        }}
                     >
-                        Client Stories
-                    </p>
-                    <h2
-                        className="text-display mb-4"
-                        style={{ fontSize: "clamp(2.25rem, 4vw, 3.5rem)" }}
-                    >
-                        Don&apos;t take our word{" "}
-                        <span className="text-display-italic">for it.</span>
-                    </h2>
-                    <p className="text-base leading-relaxed" style={{ color: "var(--color-muted)" }}>
-                        Hear from the UAE businesses that trusted us with their most
-                        important initiatives.
-                    </p>
-                </div>
-
-                {/* Testimonial Cards */}
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    {testimonials.map(({ name, role, location, quote, rating, initials }, i) => (
                         <div
-                            key={name}
-                            className={`reveal reveal-delay-${i + 1} card-base card-hover rounded-2xl p-7 flex flex-col gap-6`}
+                            style={{
+                                border: "1px solid rgba(0,0,0,0.1)",
+                                borderRadius: "0.5rem",
+                                padding: "0.25rem 1rem",
+                                fontSize: "0.875rem",
+                                fontWeight: 500,
+                                fontFamily: "Inter, sans-serif",
+                                color: "rgba(0,0,0,0.6)",
+                                letterSpacing: "-0.01em",
+                            }}
                         >
-                            {/* Quote icon */}
-                            <Quotes
-                                size={28}
-                                weight="fill"
-                                style={{ color: "var(--color-accent)", opacity: 0.4 }}
-                            />
-
-                            {/* Stars */}
-                            <div className="flex gap-1">
-                                {Array.from({ length: rating }).map((_, j) => (
-                                    <Star
-                                        key={j}
-                                        size={14}
-                                        weight="fill"
-                                        style={{ color: "var(--color-accent)" }}
-                                    />
-                                ))}
-                            </div>
-
-                            {/* Quote */}
-                            <p
-                                className="text-sm leading-relaxed flex-1"
-                                style={{ color: "var(--color-foreground)" }}
-                            >
-                                &ldquo;{quote}&rdquo;
-                            </p>
-
-                            {/* Author */}
-                            <div
-                                className="flex items-center gap-3 pt-4 border-t"
-                                style={{ borderColor: "var(--color-border)" }}
-                            >
-                                <div
-                                    className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold flex-shrink-0"
-                                    style={{
-                                        background: "var(--color-foreground)",
-                                        color: "var(--color-background)",
-                                        fontFamily: "var(--font-display)",
-                                    }}
-                                >
-                                    {initials}
-                                </div>
-                                <div>
-                                    <p
-                                        className="text-sm font-medium"
-                                        style={{ color: "var(--color-foreground)" }}
-                                    >
-                                        {name}
-                                    </p>
-                                    <p className="text-xs" style={{ color: "var(--color-muted)" }}>
-                                        {role} · {location}
-                                    </p>
-                                </div>
-                            </div>
+                            Client Stories
                         </div>
-                    ))}
+                    </div>
+
+                    {/* Heading */}
+                    <h2
+                        style={{
+                            margin: "1.25rem 0 0",
+                            fontSize: "clamp(2rem, 4vw, 3rem)",
+                            fontWeight: 400,
+                            lineHeight: 1.12,
+                            letterSpacing: "-0.02em",
+                            fontFamily: "Inter, sans-serif",
+                            color: "#000",
+                        }}
+                    >
+                        Don&apos;t take our{" "}
+                        <span
+                            style={{
+                                fontFamily: "Cormorant Garamond, Georgia, serif",
+                                fontStyle: "italic",
+                                fontWeight: 400,
+                            }}
+                        >
+                            word
+                        </span>{" "}
+                        for it.
+                    </h2>
+
+                    {/* Subheader */}
+                    <p
+                        style={{
+                            margin: "1.25rem 0 0",
+                            fontSize: "1.125rem",
+                            fontWeight: 400,
+                            lineHeight: 1.5,
+                            color: "rgba(0,0,0,0.4)",
+                            letterSpacing: "-0.02em",
+                            fontFamily: "Inter, sans-serif",
+                        }}
+                    >
+                        Hear from the UAE businesses that trusted us with their most important initiatives.
+                    </p>
+                </motion.div>
+
+                {/* 3-column scrolling testimonials */}
+                <div
+                    style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        gap: "1.5rem",
+                        maxHeight: "740px",
+                        overflow: "hidden",
+                        maskImage:
+                            "linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)",
+                        WebkitMaskImage:
+                            "linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)",
+                    }}
+                >
+                    <TestimonialsColumn testimonials={firstColumn} duration={15} />
+                    <TestimonialsColumn
+                        testimonials={secondColumn}
+                        duration={19}
+                        className="hidden-mobile-md"
+                    />
+                    <TestimonialsColumn
+                        testimonials={thirdColumn}
+                        duration={17}
+                        className="hidden-mobile-lg"
+                    />
                 </div>
             </div>
+
+            <style>{`
+        @media (max-width: 767px) {
+          .hidden-mobile-md, .hidden-mobile-lg { display: none !important; }
+        }
+        @media (min-width: 768px) and (max-width: 1023px) {
+          .hidden-mobile-lg { display: none !important; }
+        }
+      `}</style>
         </section>
     );
 }

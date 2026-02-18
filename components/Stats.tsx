@@ -9,12 +9,12 @@ function ItalicSpan({ children }: { children: string }) {
 }
 
 const ctaImages = [
-    { src: "/isomeet/690126cc4fcd080f98700019_cta-img-1.avif", pos: { top: "5%", left: "2%", width: "11rem" }, shape: "tall" },
-    { src: "/isomeet/690126d2fac9aad553d6f1e2_cta-img-4.avif", pos: { top: "5%", right: "2%", width: "11rem" }, shape: "tall" },
-    { src: "/isomeet/690126cc2850cf7b5970f339_cta-img-2.avif", pos: { bottom: "8%", left: "5%", width: "9rem" }, shape: "square" },
-    { src: "/isomeet/690126d2694e10354d8a9e77_cta-img-5.avif", pos: { bottom: "8%", right: "5%", width: "9rem" }, shape: "square" },
-    { src: "/isomeet/690126d2215127aac0893ec6_cta-img-3.avif", pos: { top: "50%", left: "0%", transform: "translateY(-50%)", width: "14rem" }, shape: "tall" },
-    { src: "/isomeet/690126d2ddd66c11b3773f24_cta-img-6.avif", pos: { top: "50%", right: "0%", transform: "translateY(-50%)", width: "14rem" }, shape: "tall" },
+    { src: "/gulaal/cta-portrait-1.avif", pos: { top: "5%", left: "2%", width: "11rem" }, shape: "tall" },
+    { src: "/gulaal/cta-portrait-2.avif", pos: { top: "5%", right: "2%", width: "11rem" }, shape: "tall" },
+    { src: "/gulaal/cta-portrait-3.avif", pos: { bottom: "8%", left: "5%", width: "9rem" }, shape: "square" },
+    { src: "/gulaal/cta-portrait-1.avif", pos: { bottom: "8%", right: "5%", width: "9rem" }, shape: "square" },
+    { src: "/gulaal/cta-portrait-2.avif", pos: { top: "50%", left: "0%", transform: "translateY(-50%)", width: "14rem" }, shape: "tall" },
+    { src: "/gulaal/cta-portrait-3.avif", pos: { top: "50%", right: "0%", transform: "translateY(-50%)", width: "14rem" }, shape: "tall" },
 ];
 
 export default function Stats() {
@@ -50,7 +50,9 @@ export default function Stats() {
                             objectFit: "cover",
                             borderRadius: "1rem",
                             display: "block",
+                            background: "#f0f0f0",
                         }}
+                        onError={(e) => { (e.currentTarget as HTMLImageElement).style.opacity = "0"; }}
                     />
                 </div>
             ))}
@@ -160,27 +162,18 @@ export default function Stats() {
                 </form>
 
                 {/* Social proof */}
-                <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
-                    <img
-                        src="/isomeet/690126cccb69ed9dab42341b_confirm_users_image.avif"
-                        alt="Clients"
-                        width={96}
-                        height={60}
-                        style={{ borderRadius: "0.375rem" }}
-                    />
-                    <div
-                        style={{
-                            fontFamily: "Inter, sans-serif",
-                            fontSize: "0.875rem",
-                            color: "#000",
-                            fontWeight: 500,
-                        }}
-                    >
-                        50+ projects{" "}
-                        <span style={{ color: "rgba(0,0,0,0.4)", fontWeight: 400 }}>
-                            delivered across the UAE
-                        </span>
-                    </div>
+                <div style={{ display: "flex", alignItems: "center", gap: "1.5rem", flexWrap: "wrap", justifyContent: "center" }}>
+                    {[
+                        { value: "50+", label: "Projects Delivered" },
+                        { value: "30+", label: "UAE Clients" },
+                        { value: "4+", label: "Years Operating" },
+                        { value: "98%", label: "Client Satisfaction" },
+                    ].map(({ value, label }) => (
+                        <div key={label} style={{ textAlign: "center" }}>
+                            <div style={{ fontFamily: "Cormorant Garamond, Georgia, serif", fontSize: "2rem", fontWeight: 500, color: "#000", lineHeight: 1 }}>{value}</div>
+                            <div style={{ fontFamily: "Inter, sans-serif", fontSize: "0.8125rem", color: "rgba(0,0,0,0.45)", marginTop: "0.25rem" }}>{label}</div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

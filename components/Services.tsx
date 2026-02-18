@@ -9,136 +9,75 @@ function ItalicSpan({ children }: { children: string }) {
     );
 }
 
-const hirerCards = [
-    {
-        title: "Create a project",
-        desc: "Add requirements, upload references.",
-        img1: "/isomeet/690126d8650a040b504815c6_f-card-1-img-1.avif",
-        img2: "/isomeet/690126d81d77af72f07564d7_f-card-1-img-2.avif",
-        bg: "#fff",
-        span: "col-span-1",
-    },
-    {
-        title: "Hire talent",
-        desc: "Choose talent and collaborate.",
-        img1: "/isomeet/690126d8f3ae16d6264f0053_f-card-2-img-1.avif",
-        img2: null,
-        bg: "#e8e0ff",
-        span: "col-span-1",
-    },
-    {
-        title: "Communication",
-        desc: "All DMs are finally in one app.",
-        img1: "/isomeet/690126d8e46f644fbd12245e_f-card-3-img-2.avif",
-        img2: "/isomeet/690126d8bd9266995bcfe79f_f-card-3-img-1.avif",
-        bg: "#d4f5e2",
-        span: "col-span-1",
-    },
-    {
-        title: "Freely trust",
-        desc: "Choose talent on rating and reviews.",
-        img1: "/isomeet/690126d8419dbc1b6de70878_f-card-4-img-2.avif",
-        img2: "/isomeet/690126d8adc74d2dc9ff42bd_f-card-4-img-1.avif",
-        bg: "#fff",
-        span: "col-span-1",
-    },
-];
-
-const talentCards = [
-    {
-        title: "Become a talent",
-        desc: "Turn your followers to bookings.",
-        img1: "/isomeet/690126e11f44792a2b9fe236_f-card-5-img-1.avif",
-        img2: null,
-        bg: "#fde8f0",
-        span: "col-span-1",
-    },
-    {
-        title: "Find work",
-        desc: "Apply for a project and collaborate.",
-        img1: "/isomeet/690126e1e8e39be812c61bd2_f-card-6-img-1.avif",
-        img2: "/isomeet/690126e1f3ae16d6264f0620_f-card-6-img-2.avif",
-        bg: "#fff",
-        span: "col-span-1",
-    },
-    {
-        title: "Collaborate with talents",
-        desc: "Create your own projects, find talents for collabs.",
-        img1: "/isomeet/690126e11d883cdb006fceb8_f-card-7-img-1.avif",
-        img2: null,
-        bg: "#fff",
-        span: "col-span-1",
-    },
-    {
-        title: "Monetize your skills",
-        desc: "Turn your passion to income.",
-        img1: "/isomeet/690126e134e96e2b535602af_f-card-8-img-1.avif",
-        img2: null,
-        bg: "#d6eeff",
-        span: "col-span-1",
-    },
-];
-
-// Adapted for Gulaal
+// Project Management cards — images to be placed in /public/gulaal/
 const pmCards = [
     {
         title: "Define your project",
-        desc: "Add scope, timeline, and references.",
-        img1: "/isomeet/690126d8650a040b504815c6_f-card-1-img-1.avif",
-        img2: "/isomeet/690126d81d77af72f07564d7_f-card-1-img-2.avif",
-        bg: "#fff",
+        desc: "Scope, timeline, deliverables — all locked in from day one.",
+        img1: "/gulaal/pm-define.avif",
+        img2: null,
+        bg: "#f5f5f5",
+        icon: "📋",
     },
     {
         title: "Assign the team",
-        desc: "Choose experts and start collaborating.",
-        img1: "/isomeet/690126d8f3ae16d6264f0053_f-card-2-img-1.avif",
+        desc: "Right people, right roles. We handle the coordination.",
+        img1: "/gulaal/pm-assign.avif",
         img2: null,
         bg: "#e8e0ff",
+        icon: "👥",
     },
     {
         title: "Track progress",
-        desc: "All updates in one clear dashboard.",
-        img1: "/isomeet/690126d8e46f644fbd12245e_f-card-3-img-2.avif",
-        img2: "/isomeet/690126d8bd9266995bcfe79f_f-card-3-img-1.avif",
+        desc: "Live dashboards. No surprises, no chasing updates.",
+        img1: "/gulaal/pm-track.avif",
+        img2: null,
         bg: "#d4f5e2",
+        icon: "📊",
     },
     {
         title: "Deliver on time",
-        desc: "Milestones, reviews, and sign-off.",
-        img1: "/isomeet/690126d8419dbc1b6de70878_f-card-4-img-2.avif",
-        img2: "/isomeet/690126d8adc74d2dc9ff42bd_f-card-4-img-1.avif",
+        desc: "Milestones, reviews, and sign-off — every time.",
+        img1: "/gulaal/pm-deliver.avif",
+        img2: null,
         bg: "#fff",
+        icon: "✅",
     },
 ];
 
+// E-Commerce cards
 const ecomCards = [
     {
         title: "Launch your store",
-        desc: "Full setup from branding to checkout.",
-        img1: "/isomeet/690126e11f44792a2b9fe236_f-card-5-img-1.avif",
+        desc: "Full setup from branding to checkout — Shopify, WooCommerce, or custom.",
+        img1: "/gulaal/ecom-launch.avif",
         img2: null,
         bg: "#fde8f0",
+        icon: "🛒",
     },
     {
         title: "Source products",
-        desc: "Find suppliers and manage inventory.",
-        img1: "/isomeet/690126e1e8e39be812c61bd2_f-card-6-img-1.avif",
-        img2: "/isomeet/690126e1f3ae16d6264f0620_f-card-6-img-2.avif",
+        desc: "Supplier sourcing, quality checks, and inventory management.",
+        img1: "/gulaal/ecom-source.avif",
+        img2: null,
         bg: "#fff",
+        icon: "📦",
     },
     {
         title: "Run campaigns",
-        desc: "Ads, SEO, and social — all handled.",
-        img1: "/isomeet/690126e11d883cdb006fceb8_f-card-7-img-1.avif",
+        desc: "Paid ads, SEO, and social — all managed and optimised.",
+        img1: "/gulaal/ecom-campaigns.avif",
         img2: null,
         bg: "#fff",
+        icon: "📣",
     },
     {
         title: "Scale revenue",
-        desc: "Analytics, optimization, and growth.",
-        img1: "/isomeet/690126e134e96e2b535602af_f-card-8-img-1.avif",
+        desc: "Analytics, A/B testing, and growth strategy — built to compound.",
+        img1: "/gulaal/ecom-scale.avif",
         img2: null,
         bg: "#d6eeff",
+        icon: "📈",
     },
 ];
 
@@ -168,6 +107,7 @@ function FeatureCard({ card }: { card: typeof pmCards[0] }) {
         >
             {/* Header */}
             <div style={{ padding: "1.75rem 1.75rem 0" }}>
+                <div style={{ fontSize: "1.75rem", marginBottom: "0.75rem" }}>{card.icon}</div>
                 <h3
                     style={{
                         fontFamily: "Inter, sans-serif",
@@ -185,13 +125,14 @@ function FeatureCard({ card }: { card: typeof pmCards[0] }) {
                         fontFamily: "Inter, sans-serif",
                         fontSize: "0.875rem",
                         color: "rgba(0,0,0,0.5)",
+                        lineHeight: 1.5,
                     }}
                 >
                     {card.desc}
                 </p>
             </div>
 
-            {/* Images */}
+            {/* Image area — shows image if available, else decorative fill */}
             <div style={{ flex: 1, position: "relative", marginTop: "1.25rem", overflow: "hidden" }}>
                 <img
                     src={card.img1}
@@ -202,30 +143,9 @@ function FeatureCard({ card }: { card: typeof pmCards[0] }) {
                         objectFit: "cover",
                         objectPosition: "top",
                     }}
-                />
-                {card.img2 && (
-                    <img
-                        src={card.img2}
-                        alt=""
-                        style={{
-                            position: "absolute",
-                            bottom: 0,
-                            right: 0,
-                            width: "55%",
-                            objectFit: "cover",
-                        }}
-                    />
-                )}
-                <img
-                    src="/isomeet/6901e53513dcf1ea037d2e38_bg-gradient.avif"
-                    alt=""
-                    style={{
-                        position: "absolute",
-                        bottom: 0,
-                        right: 0,
-                        width: "60%",
-                        pointerEvents: "none",
-                        opacity: 0.5,
+                    onError={(e) => {
+                        // Graceful fallback: hide broken image
+                        (e.currentTarget as HTMLImageElement).style.display = "none";
                     }}
                 />
             </div>

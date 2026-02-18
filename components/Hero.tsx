@@ -17,11 +17,11 @@ function ItalicSpan({ children }: { children: string }) {
 }
 
 const heroSlides = [
-    { main: "/isomeet/6908eaa020eecfd681121acf_hero-slide-1-img-1.avif", secondary: "/isomeet/6908eaa08f873b1b8e9f2260_hero-slide-1-img-2.avif" },
-    { main: "/isomeet/6908eaa03ca3b733f5b55d74_hero-slide-2-img-1.avif", secondary: "/isomeet/6908eaa1a496e8044c51f8e7_hero-slide-2-img-2.avif" },
-    { main: "/isomeet/6908eaa0e74a211f5605758c_hero-slide-3-img-1.avif", secondary: "/isomeet/6908eaa0a826889d83292f9e_hero-slide-3-img-2.avif" },
-    { main: "/isomeet/6908eaa045537dccaaf8a29d_hero-slide-4-img-1.avif", secondary: "/isomeet/6908eaa0bb44071f5696a011_hero-slide-4-img-2.avif" },
-    { main: "/isomeet/6908eaa08dc1cd6373fb8c1a_hero-slide-5-img-1.avif", secondary: "/isomeet/6908eaa0a912a88208184ff3_hero-slide-5-img-2.avif" },
+    { main: "/gulaal/hero-main.avif", secondary: "/gulaal/hero-secondary.avif" },
+    { main: "/gulaal/pm-define.avif", secondary: "/gulaal/pm-assign.avif" },
+    { main: "/gulaal/ecom-launch.avif", secondary: "/gulaal/ecom-campaigns.avif" },
+    { main: "/gulaal/cta-portrait-1.avif", secondary: "/gulaal/cta-portrait-2.avif" },
+    { main: "/gulaal/pm-deliver.avif", secondary: "/gulaal/ecom-scale.avif" },
 ];
 
 export default function Hero() {
@@ -218,7 +218,7 @@ export default function Hero() {
                                 }}
                             >
                                 <img
-                                    src="/isomeet/690126cccb69ed9dab42341b_confirm_users_image.avif"
+                                    src="/gulaal/cta-portrait-3.avif"
                                     alt="Clients"
                                     width={96}
                                     height={60}
@@ -356,20 +356,7 @@ export default function Hero() {
                             ))}
                         </div>
 
-                        {/* Background gradient */}
-                        <img
-                            src="/isomeet/6901e53513dcf1ea037d2e38_bg-gradient.avif"
-                            alt=""
-                            style={{
-                                position: "absolute",
-                                bottom: "-2rem",
-                                right: "-2rem",
-                                width: "60%",
-                                pointerEvents: "none",
-                                zIndex: 0,
-                                opacity: 0.6,
-                            }}
-                        />
+
                     </div>
                 </div>
             </div>

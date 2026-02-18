@@ -8,33 +8,34 @@ function ItalicSpan({ children }: { children: string }) {
     );
 }
 
+// UAE business industries — no external images needed
 const row1 = [
-    { label: "Construction", img: "/isomeet/690126ee5ec2cd7f83dcde2b_Photographers.avif" },
-    { label: "Retail", img: "/isomeet/690126e8669938a5c3f9af81_Models.avif" },
-    { label: "F&B", img: "/isomeet/690126ee35d3ba4767605de0_Videographers.avif" },
-    { label: "Healthcare", img: "/isomeet/690126e8d7538051abe4b489_Hair stylists.avif" },
-    { label: "E-Commerce", img: "/isomeet/690126cc4ebed955e557fd79_Content creators.avif" },
-    { label: "Marketing", img: "/isomeet/690126e8cda7655503c7b020_Marketing.avif" },
-    { label: "Beauty", img: "/isomeet/690126e8c2b722dbe178f270_Makeup artists.avif" },
-    { label: "Events", img: "/isomeet/690126e829aa55d6b8db6751_Music talents.avif" },
-    { label: "Influencers", img: "/isomeet/690126e8695f007675d67a8f_Influencers.avif" },
-    { label: "Entertainment", img: "/isomeet/690126cc2ca1110bcfaed389_Actors.avif" },
+    { label: "Retail", icon: "🛍️" },
+    { label: "F&B", icon: "🍽️" },
+    { label: "Real Estate", icon: "🏢" },
+    { label: "Healthcare", icon: "🏥" },
+    { label: "E-Commerce", icon: "🛒" },
+    { label: "Logistics", icon: "📦" },
+    { label: "Fashion", icon: "👗" },
+    { label: "Tourism", icon: "✈️" },
+    { label: "Finance", icon: "💼" },
+    { label: "Construction", icon: "🏗️" },
 ];
 
 const row2 = [
-    { label: "Photography", img: "/isomeet/690126e819b7a9a9139c17da_Photo editors.avif" },
-    { label: "Branding", img: "/isomeet/690126cc2b60187615b10b98_Brand specialists.avif" },
-    { label: "Logistics", img: "/isomeet/690126d28568185dd161930e_Drone operators.avif" },
-    { label: "Food & Bev", img: "/isomeet/690126e10200c2d051b7e6e9_Food specialists.avif" },
-    { label: "Floristry", img: "/isomeet/690126e17ad452f088ae89c2_Florists.avif" },
-    { label: "Video", img: "/isomeet/690126ee6a455bef4ad284b5_Video content creators.avif" },
-    { label: "Fashion", img: "/isomeet/690126ee65bda9b0a21368a1_Stylists.avif" },
-    { label: "Fitness", img: "/isomeet/690126d2b766b7d2bdc2af2e_Dancers.avif" },
-    { label: "Media", img: "/isomeet/690126d2b58c322892d85058_Directors.avif" },
-    { label: "Production", img: "/isomeet/690126ee4fcd080f98700957_Producers.avif" },
+    { label: "Marketing", icon: "📣" },
+    { label: "Technology", icon: "💻" },
+    { label: "Education", icon: "🎓" },
+    { label: "Beauty", icon: "💄" },
+    { label: "Events", icon: "🎪" },
+    { label: "Media", icon: "📱" },
+    { label: "Automotive", icon: "🚗" },
+    { label: "Food & Bev", icon: "☕" },
+    { label: "Wellness", icon: "🌿" },
+    { label: "Consulting", icon: "📊" },
 ];
 
-function MarqueeItem({ label, img }: { label: string; img: string }) {
+function MarqueeItem({ label, icon }: { label: string; icon: string }) {
     return (
         <div
             style={{
@@ -51,14 +52,15 @@ function MarqueeItem({ label, img }: { label: string; img: string }) {
                     height: "7.5rem",
                     borderRadius: "9999px",
                     overflow: "hidden",
-                    background: "#f0f0f0",
+                    background: "#f5f5f5",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontSize: "2.5rem",
+                    border: "1px solid rgba(0,0,0,0.06)",
                 }}
             >
-                <img
-                    src={img}
-                    alt={label}
-                    style={{ width: "100%", height: "100%", objectFit: "cover" }}
-                />
+                {icon}
             </div>
             <span
                 style={{
@@ -121,6 +123,18 @@ export default function Industries() {
                 >
                     F<ItalicSpan>o</ItalicSpan>r ev<ItalicSpan>e</ItalicSpan>ry bu<ItalicSpan>s</ItalicSpan>iness th<ItalicSpan>a</ItalicSpan>t bu<ItalicSpan>i</ItalicSpan>lds
                 </h2>
+                <p
+                    style={{
+                        fontFamily: "Inter, sans-serif",
+                        fontSize: "1rem",
+                        color: "rgba(0,0,0,0.5)",
+                        marginTop: "0.75rem",
+                        maxWidth: "36rem",
+                        lineHeight: 1.6,
+                    }}
+                >
+                    From retail to real estate — we&apos;ve delivered projects across every major industry in the UAE.
+                </p>
             </div>
 
             {/* Marquee rows */}

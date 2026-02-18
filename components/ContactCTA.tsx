@@ -47,7 +47,7 @@ export default function ContactCTA() {
                 background: "#fff",
             }}
         >
-            <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 2.5rem" }}>
+            <div style={{ maxWidth: "83rem", margin: "0 auto", padding: "0 3.5rem" }}>
                 <div
                     style={{
                         display: "grid",
@@ -59,19 +59,25 @@ export default function ContactCTA() {
                 >
                     {/* Left: Form */}
                     <div>
-                        <div style={{ marginBottom: "2.5rem" }}>
+                        <div style={{ marginBottom: "2.5rem", display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+                            {/* Pill label */}
+                            <div style={{ display: "inline-flex" }}>
+                                <div style={{ border: "1px solid rgba(0,0,0,0.1)", borderRadius: "0.5rem", padding: "0.25rem 1rem", fontSize: "0.875rem", fontWeight: 500, fontFamily: "Inter, sans-serif", color: "rgba(0,0,0,0.6)", letterSpacing: "-0.01em" }}>
+                                    Contact
+                                </div>
+                            </div>
                             <h2
                                 style={{
+                                    margin: 0,
                                     fontFamily: "Inter, sans-serif",
-                                    fontWeight: 500,
-                                    fontSize: "clamp(2rem, 4vw, 3rem)",
-                                    lineHeight: 1.1,
-                                    letterSpacing: "-0.03em",
+                                    fontWeight: 400,
+                                    fontSize: "3.75rem",
+                                    lineHeight: 1.12,
+                                    letterSpacing: "-0.02em",
                                     color: "#000",
-                                    marginBottom: "1rem",
                                 }}
                             >
-                                St<ItalicSpan>a</ItalicSpan>rt yo<ItalicSpan>u</ItalicSpan>r pr<ItalicSpan>o</ItalicSpan>ject bef<ItalicSpan>o</ItalicSpan>re anyon<ItalicSpan>e</ItalicSpan> else d<ItalicSpan>o</ItalicSpan>es
+                                St<ItalicSpan>a</ItalicSpan>rt your pr<ItalicSpan>o</ItalicSpan>ject bef<ItalicSpan>o</ItalicSpan>re anyone<ItalicSpan> </ItalicSpan>else d<ItalicSpan>o</ItalicSpan>es
                             </h2>
                         </div>
 
@@ -163,28 +169,27 @@ export default function ContactCTA() {
                                 <button
                                     type="submit"
                                     style={{
-                                        display: "flex",
+                                        display: "inline-flex",
                                         alignItems: "center",
                                         justifyContent: "center",
                                         gap: "0.5rem",
                                         background: "#000",
                                         color: "#fff",
                                         fontFamily: "Inter, sans-serif",
-                                        fontSize: "0.9375rem",
+                                        fontSize: "1rem",
                                         fontWeight: 500,
-                                        padding: "0.875rem 1.5rem",
-                                        borderRadius: "0.5rem",
+                                        padding: "1rem 1.25rem",
+                                        borderRadius: "5rem",
                                         border: "none",
                                         cursor: "pointer",
                                         marginTop: "0.5rem",
-                                        transition: "opacity 0.2s",
+                                        lineHeight: 1,
+                                        transition: "opacity 0.15s",
+                                        whiteSpace: "nowrap",
                                     }}
                                     onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.85")}
                                     onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
                                 >
-                                    <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                                        <path d="M9.76121 13.7769C9.47557 14.0743 9.01244 14.0744 8.72688 13.7769C8.4412 13.4793 8.44125 12.9959 8.72688 12.6981L12.4862 8.7794L1.73146 8.7794C1.3275 8.77938 0.999999 8.43809 0.999999 8.01709C1.00008 7.59617 1.32756 7.25481 1.73146 7.25479L12.5197 7.25479L8.72688 3.30117C8.44133 3.0035 8.44138 2.5209 8.72688 2.22322C9.01252 1.92558 9.47557 1.92561 9.76121 2.22322L14.7867 7.46068C15.0037 7.68686 15.0546 8.01957 14.9418 8.297C14.8926 8.42691 14.8108 8.53933 14.7059 8.62286L9.76121 13.7769Z" fill="white" />
-                                    </svg>
                                     Book a Free Call
                                 </button>
                             </form>

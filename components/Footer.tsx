@@ -11,9 +11,9 @@ export default function Footer() {
             {/* Top */}
             <div
                 style={{
-                    maxWidth: 1280,
+                    maxWidth: "83rem",
                     margin: "0 auto",
-                    padding: "3.5rem 2.5rem",
+                    padding: "3.5rem",
                 }}
             >
                 <div
@@ -123,9 +123,9 @@ export default function Footer() {
             <div
                 style={{
                     borderTop: "1px solid rgba(0,0,0,0.06)",
-                    maxWidth: 1280,
+                    maxWidth: "83rem",
                     margin: "0 auto",
-                    padding: "1.5rem 2.5rem",
+                    padding: "1.5rem 3.5rem",
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: "center",

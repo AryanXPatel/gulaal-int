@@ -62,9 +62,9 @@ export default function Stats() {
                 style={{
                     position: "relative",
                     zIndex: 1,
-                    maxWidth: 1280,
+                    maxWidth: "83rem",
                     margin: "0 auto",
-                    padding: "0 2.5rem",
+                    padding: "0 3.5rem",
                     display: "flex",
                     flexDirection: "column",
                     alignItems: "center",
@@ -79,29 +79,36 @@ export default function Stats() {
                     </svg>
                 </div>
 
-                <div>
+                <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "1.5rem" }}>
+                    {/* Pill label */}
+                    <div style={{ display: "inline-flex" }}>
+                        <div style={{ border: "1px solid rgba(0,0,0,0.1)", borderRadius: "0.5rem", padding: "0.25rem 1rem", fontSize: "0.875rem", fontWeight: 500, fontFamily: "Inter, sans-serif", color: "rgba(0,0,0,0.6)", letterSpacing: "-0.01em" }}>
+                            Get Started
+                        </div>
+                    </div>
                     <h2
                         style={{
+                            margin: 0,
                             fontFamily: "Inter, sans-serif",
-                            fontWeight: 500,
-                            fontSize: "clamp(2rem, 4.5vw, 3.5rem)",
-                            lineHeight: 1.08,
-                            letterSpacing: "-0.03em",
+                            fontWeight: 400,
+                            fontSize: "3.75rem",
+                            lineHeight: 1.12,
+                            letterSpacing: "-0.02em",
                             color: "#000",
-                            marginBottom: "1rem",
                             maxWidth: "36rem",
                         }}
                     >
-                        Re<ItalicSpan>a</ItalicSpan>dy to j<ItalicSpan>o</ItalicSpan>in the n<ItalicSpan>e</ItalicSpan>xt era of UA<ItalicSpan>E</ItalicSpan> busin<ItalicSpan>e</ItalicSpan>ss gr<ItalicSpan>o</ItalicSpan>wth?
+                        Re<ItalicSpan>a</ItalicSpan>dy to join the n<ItalicSpan>e</ItalicSpan>xt era of UA<ItalicSpan>E</ItalicSpan> busin<ItalicSpan>e</ItalicSpan>ss gr<ItalicSpan>o</ItalicSpan>wth?
                     </h2>
                     <p
                         style={{
+                            margin: 0,
                             fontFamily: "Inter, sans-serif",
-                            fontSize: "1.0625rem",
-                            color: "rgba(0,0,0,0.55)",
-                            lineHeight: 1.6,
+                            fontSize: "1.125rem",
+                            color: "rgba(0,0,0,0.4)",
+                            lineHeight: 1.5,
                             maxWidth: "28rem",
-                            margin: "0 auto",
+                            letterSpacing: "-0.02em",
                         }}
                     >
                         Join the early waitlist and get notified the moment we launch new services.
@@ -113,7 +120,7 @@ export default function Stats() {
                     onSubmit={(e) => e.preventDefault()}
                     style={{
                         display: "flex",
-                        gap: "0.5rem",
+                        gap: "0.75rem",
                         flexWrap: "wrap",
                         justifyContent: "center",
                     }}
@@ -124,39 +131,39 @@ export default function Stats() {
                         required
                         style={{
                             fontFamily: "Inter, sans-serif",
-                            fontSize: "0.9375rem",
-                            padding: "0.75rem 1rem",
-                            border: "1px solid rgba(0,0,0,0.15)",
-                            borderRadius: "0.5rem",
+                            fontSize: "1rem",
+                            padding: "0.5rem 1rem 0.5rem 1.125rem",
+                            border: "none",
+                            borderRadius: "5rem",
                             outline: "none",
-                            background: "#fff",
+                            background: "#f2f2f2",
                             color: "#000",
-                            width: "18rem",
+                            minWidth: "19rem",
+                            height: "3rem",
                         }}
                     />
                     <button
                         type="submit"
                         style={{
-                            display: "flex",
+                            display: "inline-flex",
                             alignItems: "center",
                             gap: "0.5rem",
                             background: "#000",
                             color: "#fff",
                             fontFamily: "Inter, sans-serif",
-                            fontSize: "0.9375rem",
+                            fontSize: "1rem",
                             fontWeight: 500,
-                            padding: "0.75rem 1.375rem",
-                            borderRadius: "0.5rem",
+                            padding: "1rem 1.25rem",
+                            borderRadius: "5rem",
                             border: "none",
                             cursor: "pointer",
-                            transition: "opacity 0.2s",
+                            lineHeight: 1,
+                            transition: "opacity 0.15s",
+                            whiteSpace: "nowrap",
                         }}
                         onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.85")}
                         onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
                     >
-                        <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                            <path d="M9.76121 13.7769C9.47557 14.0743 9.01244 14.0744 8.72688 13.7769C8.4412 13.4793 8.44125 12.9959 8.72688 12.6981L12.4862 8.7794L1.73146 8.7794C1.3275 8.77938 0.999999 8.43809 0.999999 8.01709C1.00008 7.59617 1.32756 7.25481 1.73146 7.25479L12.5197 7.25479L8.72688 3.30117C8.44133 3.0035 8.44138 2.5209 8.72688 2.22322C9.01252 1.92558 9.47557 1.92561 9.76121 2.22322L14.7867 7.46068C15.0037 7.68686 15.0546 8.01957 14.9418 8.297C14.8926 8.42691 14.8108 8.53933 14.7059 8.62286L9.76121 13.7769Z" fill="white" />
-                        </svg>
                         Get in Touch
                     </button>
                 </form>

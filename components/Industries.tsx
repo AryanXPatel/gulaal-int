@@ -110,27 +110,35 @@ export default function Industries() {
             }}
         >
             {/* Header */}
-            <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 2.5rem", marginBottom: "3.5rem" }}>
+            <div style={{ maxWidth: "83rem", margin: "0 auto", padding: "0 3.5rem", marginBottom: "3.5rem", display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+                {/* Pill label */}
+                <div style={{ display: "inline-flex" }}>
+                    <div style={{ border: "1px solid rgba(0,0,0,0.1)", borderRadius: "0.5rem", padding: "0.25rem 1rem", fontSize: "0.875rem", fontWeight: 500, fontFamily: "Inter, sans-serif", color: "rgba(0,0,0,0.6)", letterSpacing: "-0.01em" }}>
+                        Industries
+                    </div>
+                </div>
                 <h2
                     style={{
+                        margin: 0,
                         fontFamily: "Inter, sans-serif",
-                        fontWeight: 500,
-                        fontSize: "clamp(2rem, 4vw, 3rem)",
-                        lineHeight: 1.1,
-                        letterSpacing: "-0.03em",
+                        fontWeight: 400,
+                        fontSize: "3.75rem",
+                        lineHeight: 1.12,
+                        letterSpacing: "-0.02em",
                         color: "#000",
                     }}
                 >
-                    F<ItalicSpan>o</ItalicSpan>r ev<ItalicSpan>e</ItalicSpan>ry bu<ItalicSpan>s</ItalicSpan>iness th<ItalicSpan>a</ItalicSpan>t bu<ItalicSpan>i</ItalicSpan>lds
+                    F<ItalicSpan>o</ItalicSpan>r every bu<ItalicSpan>s</ItalicSpan>iness that bu<ItalicSpan>i</ItalicSpan>lds
                 </h2>
                 <p
                     style={{
+                        margin: 0,
                         fontFamily: "Inter, sans-serif",
-                        fontSize: "1rem",
-                        color: "rgba(0,0,0,0.5)",
-                        marginTop: "0.75rem",
+                        fontSize: "1.125rem",
+                        color: "rgba(0,0,0,0.4)",
                         maxWidth: "36rem",
-                        lineHeight: 1.6,
+                        lineHeight: 1.5,
+                        letterSpacing: "-0.02em",
                     }}
                 >
                     From retail to real estate — we&apos;ve delivered projects across every major industry in the UAE.

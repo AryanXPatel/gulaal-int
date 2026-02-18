@@ -66,7 +66,7 @@ export default function WhySection() {
                 background: "#fff",
             }}
         >
-            <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 2.5rem" }}>
+            <div style={{ maxWidth: "83rem", margin: "0 auto", padding: "0 3.5rem" }}>
                 {/* Header */}
                 <div
                     style={{
@@ -78,27 +78,37 @@ export default function WhySection() {
                     }}
                     className="why-header-grid"
                 >
-                    <h2
-                        style={{
-                            fontFamily: "Inter, sans-serif",
-                            fontWeight: 500,
-                            fontSize: "clamp(2rem, 4vw, 3rem)",
-                            lineHeight: 1.1,
-                            letterSpacing: "-0.03em",
-                            color: "#000",
-                        }}
-                    >
-                        Bec<ItalicSpan>a</ItalicSpan>use bu<ItalicSpan>s</ItalicSpan>iness gr<ItalicSpan>o</ItalicSpan>wth sho<ItalicSpan>u</ItalicSpan>ldn&apos;t be t<ItalicSpan>h</ItalicSpan>is com<ItalicSpan>p</ItalicSpan>licat<ItalicSpan>e</ItalicSpan>d
-                    </h2>
+                    <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+                        {/* Pill label */}
+                        <div style={{ display: "inline-flex" }}>
+                            <div style={{ border: "1px solid rgba(0,0,0,0.1)", borderRadius: "0.5rem", padding: "0.25rem 1rem", fontSize: "0.875rem", fontWeight: 500, fontFamily: "Inter, sans-serif", color: "rgba(0,0,0,0.6)", letterSpacing: "-0.01em" }}>
+                                Why Gulaal
+                            </div>
+                        </div>
+                        <h2
+                            style={{
+                                margin: 0,
+                                fontFamily: "Inter, sans-serif",
+                                fontWeight: 400,
+                                fontSize: "3.75rem",
+                                lineHeight: 1.12,
+                                letterSpacing: "-0.02em",
+                                color: "#000",
+                            }}
+                        >
+                            Bec<ItalicSpan>a</ItalicSpan>use bu<ItalicSpan>s</ItalicSpan>iness gr<ItalicSpan>o</ItalicSpan>wth sho<ItalicSpan>u</ItalicSpan>ldn&apos;t be this com<ItalicSpan>p</ItalicSpan>licat<ItalicSpan>e</ItalicSpan>d
+                        </h2>
+                    </div>
                     <div style={{ paddingTop: "0.5rem" }}>
                         <p
                             style={{
                                 fontFamily: "Inter, sans-serif",
-                                fontSize: "1.0625rem",
+                                fontSize: "1.125rem",
                                 fontWeight: 400,
-                                color: "rgba(0,0,0,0.55)",
-                                lineHeight: 1.6,
+                                color: "rgba(0,0,0,0.4)",
+                                lineHeight: 1.5,
                                 maxWidth: "32rem",
+                                letterSpacing: "-0.02em",
                             }}
                         >
                             We&apos;ve lived the operational chaos ourselves — so we built a simpler way to manage projects and scale e-commerce in the UAE.

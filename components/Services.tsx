@@ -166,29 +166,37 @@ export default function Services() {
                 background: "#fff",
             }}
         >
-            <div style={{ maxWidth: 1280, margin: "0 auto", padding: "0 2.5rem" }}>
+            <div style={{ maxWidth: "83rem", margin: "0 auto", padding: "0 3.5rem" }}>
                 {/* Header */}
-                <div style={{ marginBottom: "3rem" }}>
+                <div style={{ marginBottom: "3rem", display: "flex", flexDirection: "column", gap: "1.5rem" }}>
+                    {/* Pill label */}
+                    <div style={{ display: "inline-flex" }}>
+                        <div style={{ border: "1px solid rgba(0,0,0,0.1)", borderRadius: "0.5rem", padding: "0.25rem 1rem", fontSize: "0.875rem", fontWeight: 500, fontFamily: "Inter, sans-serif", color: "rgba(0,0,0,0.6)", letterSpacing: "-0.01em" }}>
+                            Services
+                        </div>
+                    </div>
                     <h2
                         style={{
+                            margin: 0,
                             fontFamily: "Inter, sans-serif",
-                            fontWeight: 500,
-                            fontSize: "clamp(2rem, 4vw, 3rem)",
-                            lineHeight: 1.1,
-                            letterSpacing: "-0.03em",
+                            fontWeight: 400,
+                            fontSize: "3.75rem",
+                            lineHeight: 1.12,
+                            letterSpacing: "-0.02em",
                             color: "#000",
-                            marginBottom: "1rem",
                         }}
                     >
-                        We&apos;<ItalicSpan>v</ItalicSpan>e do<ItalicSpan>n</ItalicSpan>e the h<ItalicSpan>a</ItalicSpan>rd part, n<ItalicSpan>o</ItalicSpan>w it&apos;s your turn to gr<ItalicSpan>o</ItalicSpan>w
+                        We&apos;<ItalicSpan>v</ItalicSpan>e done the h<ItalicSpan>a</ItalicSpan>rd part, n<ItalicSpan>o</ItalicSpan>w it&apos;s your turn to gr<ItalicSpan>o</ItalicSpan>w
                     </h2>
                     <p
                         style={{
+                            margin: 0,
                             fontFamily: "Inter, sans-serif",
-                            fontSize: "1.0625rem",
-                            color: "rgba(0,0,0,0.55)",
-                            lineHeight: 1.6,
+                            fontSize: "1.125rem",
+                            color: "rgba(0,0,0,0.4)",
+                            lineHeight: 1.5,
                             maxWidth: "36rem",
+                            letterSpacing: "-0.02em",
                         }}
                     >
                         Whether you&apos;re launching a project or scaling an online store, everything is designed to flow effortlessly.

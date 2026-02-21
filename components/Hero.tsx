@@ -38,6 +38,7 @@ export default function Hero() {
         >
             {/* Container */}
             <div
+                className="hero-container"
                 style={{
                     boxSizing: "border-box",
                     width: "100%",
@@ -52,6 +53,7 @@ export default function Hero() {
             >
                 {/* 2-col grid */}
                 <div
+                    className="hero-grid"
                     style={{
                         display: "grid",
                         gridAutoFlow: "column",
@@ -121,6 +123,7 @@ export default function Hero() {
                                 }}
                             >
                                 <h1
+                                    className="hero-heading"
                                     style={{
                                         margin: 0,
                                         letterSpacing: "-0.02em",
@@ -188,6 +191,7 @@ export default function Hero() {
 
                     {/* ── RIGHT COLUMN — Sliders ── */}
                     <div
+                        className="hero-slider-wrapper"
                         style={{
                             zIndex: 1,
                             justifyContent: "flex-start",
@@ -215,6 +219,7 @@ export default function Hero() {
                         >
                             {/* Main horizontal Swiper */}
                             <div
+                                className="hero-slider-main"
                                 style={{
                                     overflow: "hidden",
                                     width: "47.0625rem",
@@ -277,6 +282,7 @@ export default function Hero() {
 
                             {/* Secondary vertical creative Swiper */}
                             <div
+                                className="hero-slider-secondary"
                                 style={{
                                     position: "absolute",
                                     inset: "auto auto 3rem -5.8rem",
@@ -359,9 +365,35 @@ export default function Hero() {
             {/* Mobile responsive */}
             <style>{`
         @media (max-width: 900px) {
-          .hero-grid-override {
+          .hero-grid {
             grid-auto-flow: row !important;
             grid-auto-columns: 1fr !important;
+          }
+          .hero-container {
+            padding-left: 1.25rem !important;
+            padding-right: 1.25rem !important;
+          }
+          .hero-heading {
+            font-size: 2.5rem !important;
+          }
+          .hero-slider-main {
+            width: 100% !important;
+            margin-right: 0 !important;
+          }
+          .hero-slider-secondary {
+            display: none !important;
+          }
+          .hero-slider-wrapper {
+            margin-left: 0 !important;
+          }
+        }
+        @media (max-width: 600px) {
+          .hero-heading {
+            font-size: 2rem !important;
+          }
+          .hero-container {
+            padding-top: 1.5rem !important;
+            padding-bottom: 1.5rem !important;
           }
         }
       `}</style>

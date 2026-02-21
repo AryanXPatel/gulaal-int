@@ -35,7 +35,7 @@ export default function ContactCTA() {
                 background: "#fff",
             }}
         >
-            <div style={{ maxWidth: "83rem", margin: "0 auto", padding: "0 3.5rem" }}>
+            <div className="section-container" style={{ maxWidth: "83rem", margin: "0 auto", padding: "0 3.5rem" }}>
                 <div
                     style={{
                         display: "grid",
@@ -55,6 +55,7 @@ export default function ContactCTA() {
                                 </div>
                             </div>
                             <h2
+                                className="section-heading"
                                 style={{
                                     margin: 0,
                                     fontFamily: "Inter, sans-serif",
@@ -282,6 +283,8 @@ export default function ContactCTA() {
             <style>{`
         @media (max-width: 767px) {
           .contact-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+          .section-container { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+          .section-heading { font-size: 2.25rem !important; }
         }
       `}</style>
         </section>

@@ -58,7 +58,7 @@ export default function WhySection() {
                 background: "#fff",
             }}
         >
-            <div style={{ maxWidth: "83rem", margin: "0 auto", padding: "0 3.5rem" }}>
+            <div className="section-container" style={{ maxWidth: "83rem", margin: "0 auto", padding: "0 3.5rem" }}>
                 {/* ── Header: full-width ── */}
                 <div
                     style={{
@@ -85,6 +85,7 @@ export default function WhySection() {
                         </div>
                     </div>
                     <h2
+                        className="section-heading"
                         style={{
                             margin: 0,
                             fontFamily: "Inter, sans-serif",
@@ -185,6 +186,8 @@ export default function WhySection() {
             <style>{`
         @media (max-width: 767px) {
           .why-cards-grid { grid-template-columns: 1fr !important; }
+          .section-container { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+          .section-heading { font-size: 2.25rem !important; }
         }
         @media (min-width: 768px) and (max-width: 1023px) {
           .why-cards-grid { grid-template-columns: repeat(2, 1fr) !important; }

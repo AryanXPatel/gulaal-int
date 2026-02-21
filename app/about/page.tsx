@@ -69,6 +69,7 @@ export default function AboutPage() {
                 Section 1 — Page Hero
             ════════════════════════════════════════════════ */}
             <section
+                className="about-hero-section"
                 style={{
                     paddingTop: "4.5rem",
                     paddingBlock: "8.25rem",
@@ -76,6 +77,7 @@ export default function AboutPage() {
                 }}
             >
                 <div
+                    className="about-container"
                     style={{
                         maxWidth: "83rem",
                         margin: "0 auto",
@@ -111,6 +113,7 @@ export default function AboutPage() {
 
                         {/* Heading */}
                         <h1
+                            className="about-hero-heading"
                             style={{
                                 margin: 0,
                                 fontFamily: "Inter, sans-serif",
@@ -149,13 +152,14 @@ export default function AboutPage() {
                 Section 2 — Our Mission (2-column)
             ════════════════════════════════════════════════ */}
             <section
+                className="about-mission-section"
                 style={{
                     paddingBlock: "8.25rem",
                     background: "#fff",
                     borderTop: "1px solid rgba(0,0,0,0.06)",
                 }}
             >
-                <div style={{ maxWidth: "83rem", margin: "0 auto", padding: "0 3.5rem" }}>
+                <div className="about-container" style={{ maxWidth: "83rem", margin: "0 auto", padding: "0 3.5rem" }}>
                     {/* Pill */}
                     <div style={{ display: "inline-flex", marginBottom: "2.5rem" }}>
                         <div
@@ -244,27 +248,20 @@ export default function AboutPage() {
                     </div>
                 </div>
 
-                <style>{`
-                    @media (max-width: 767px) {
-                        .about-mission-grid {
-                            grid-template-columns: 1fr !important;
-                            gap: 2.5rem !important;
-                        }
-                    }
-                `}</style>
             </section>
 
             {/* ════════════════════════════════════════════════
                 Section 3 — Values (3 cards)
             ════════════════════════════════════════════════ */}
             <section
+                className="about-values-section"
                 style={{
                     paddingBlock: "8.25rem",
                     background: "#fff",
                     borderTop: "1px solid rgba(0,0,0,0.06)",
                 }}
             >
-                <div style={{ maxWidth: "83rem", margin: "0 auto", padding: "0 3.5rem" }}>
+                <div className="about-container" style={{ maxWidth: "83rem", margin: "0 auto", padding: "0 3.5rem" }}>
                     {/* Header */}
                     <div
                         style={{
@@ -291,6 +288,7 @@ export default function AboutPage() {
                             </div>
                         </div>
                         <h2
+                            className="about-section-heading"
                             style={{
                                 margin: 0,
                                 fontFamily: "Inter, sans-serif",
@@ -371,30 +369,20 @@ export default function AboutPage() {
                     </div>
                 </div>
 
-                <style>{`
-                    @media (max-width: 767px) {
-                        .about-values-grid {
-                            grid-template-columns: 1fr !important;
-                        }
-                    }
-                    @media (min-width: 768px) and (max-width: 1023px) {
-                        .about-values-grid {
-                            grid-template-columns: repeat(2, 1fr) !important;
-                        }
-                    }
-                `}</style>
             </section>
 
             {/* ════════════════════════════════════════════════
                 Section 4 — CTA Banner
             ════════════════════════════════════════════════ */}
             <section
+                className="about-cta-section"
                 style={{
                     paddingBlock: "8.25rem",
                     background: "#f5f5f5",
                 }}
             >
                 <div
+                    className="about-container"
                     style={{
                         maxWidth: "83rem",
                         margin: "0 auto",
@@ -407,6 +395,7 @@ export default function AboutPage() {
                     }}
                 >
                     <h2
+                        className="about-section-heading"
                         style={{
                             margin: 0,
                             fontFamily: "Inter, sans-serif",
@@ -449,6 +438,58 @@ export default function AboutPage() {
             </section>
 
             <Footer />
+
+            {/* ── Responsive overrides ── */}
+            <style>{`
+                @media (max-width: 900px) {
+                    .about-hero-heading {
+                        font-size: 2.75rem !important;
+                    }
+                    .about-section-heading {
+                        font-size: 2.75rem !important;
+                    }
+                }
+                @media (min-width: 768px) and (max-width: 1023px) {
+                    .about-values-grid {
+                        grid-template-columns: repeat(2, 1fr) !important;
+                    }
+                }
+                @media (max-width: 767px) {
+                    /* Container padding */
+                    .about-container {
+                        padding-left: 1.25rem !important;
+                        padding-right: 1.25rem !important;
+                    }
+                    /* Section spacing */
+                    .about-hero-section {
+                        padding-block: 4rem !important;
+                    }
+                    .about-mission-section {
+                        padding-block: 4rem !important;
+                    }
+                    .about-values-section {
+                        padding-block: 4rem !important;
+                    }
+                    .about-cta-section {
+                        padding-block: 4rem !important;
+                    }
+                    /* Heading sizes */
+                    .about-hero-heading {
+                        font-size: 2rem !important;
+                    }
+                    .about-section-heading {
+                        font-size: 2rem !important;
+                    }
+                    /* Grid layouts */
+                    .about-mission-grid {
+                        grid-template-columns: 1fr !important;
+                        gap: 2.5rem !important;
+                    }
+                    .about-values-grid {
+                        grid-template-columns: 1fr !important;
+                    }
+                }
+            `}</style>
         </>
     );
 }

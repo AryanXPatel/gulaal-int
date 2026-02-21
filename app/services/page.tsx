@@ -147,6 +147,7 @@ export default function ServicesPage() {
 
             {/* ── Page Hero ── */}
             <section
+                className="services-hero-section"
                 style={{
                     paddingTop: "calc(4.5rem + 8.25rem)",
                     paddingBottom: "4rem",
@@ -154,6 +155,7 @@ export default function ServicesPage() {
                 }}
             >
                 <div
+                    className="services-container"
                     style={{
                         maxWidth: "83rem",
                         margin: "0 auto",
@@ -222,6 +224,7 @@ export default function ServicesPage() {
                 }}
             >
                 <div
+                    className="services-container"
                     style={{
                         maxWidth: "83rem",
                         margin: "0 auto",
@@ -294,6 +297,7 @@ export default function ServicesPage() {
                 }}
             >
                 <div
+                    className="services-container"
                     style={{
                         maxWidth: "83rem",
                         margin: "0 auto",
@@ -360,12 +364,14 @@ export default function ServicesPage() {
 
             {/* ── CTA Strip ── */}
             <section
+                className="services-cta-section"
                 style={{
                     paddingBottom: "8.25rem",
                     background: "#fff",
                 }}
             >
                 <div
+                    className="services-container"
                     style={{
                         maxWidth: "83rem",
                         margin: "0 auto",
@@ -442,12 +448,27 @@ export default function ServicesPage() {
                         font-size: 1.75rem !important;
                     }
                 }
+                @media (max-width: 767px) {
+                    /* Container padding */
+                    .services-container {
+                        padding-left: 1.25rem !important;
+                        padding-right: 1.25rem !important;
+                    }
+                    /* Section spacing */
+                    .services-hero-section {
+                        padding-top: calc(4.5rem + 4rem) !important;
+                        padding-bottom: 2rem !important;
+                    }
+                    .services-cta-section {
+                        padding-bottom: 4rem !important;
+                    }
+                }
                 @media (max-width: 600px) {
                     .services-bento-grid {
                         grid-template-columns: 1fr !important;
                     }
                     .services-page-hero-heading {
-                        font-size: 2.25rem !important;
+                        font-size: 2rem !important;
                     }
                     .services-page-section-heading {
                         font-size: 1.5rem !important;

@@ -12,6 +12,7 @@ export default function Footer() {
         >
             {/* Top */}
             <div
+                className="footer-top"
                 style={{
                     maxWidth: "83rem",
                     margin: "0 auto",
@@ -29,12 +30,9 @@ export default function Footer() {
                 >
                     {/* Logo + tagline */}
                     <div style={{ maxWidth: "22rem" }}>
-                        <Link href="/" style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.875rem" }}>
-                            <svg width="28" height="28" viewBox="0 0 56 56" fill="none">
-                                <path fillRule="evenodd" clipRule="evenodd" d="M28.1206 12C32.3863 12.0001 36.4776 13.6946 39.4939 16.7109C42.3605 19.5777 44.0321 23.4154 44.191 27.451H56.2435V28.7174H44.1887C44.0298 32.753 42.3577 36.5907 39.491 39.4575C36.4746 42.4737 32.3834 44.1683 28.1177 44.1684C23.852 44.1683 19.7608 42.4737 16.7444 39.4575C13.8777 36.5907 12.2056 32.753 12.0468 28.7174H0V27.451H12.0496C12.2085 23.4153 13.8805 19.5777 16.7473 16.7109C19.7637 13.6946 23.8549 12 28.1206 12ZM15.0357 28.7174C15.1891 32.2642 16.627 35.6336 19.0801 38.1548C21.6786 40.8255 25.2032 42.3257 28.878 42.3257C32.5528 42.3256 36.0776 40.8255 38.676 38.1548C41.1289 35.6336 42.5664 32.2642 42.7198 28.7174H15.0357ZM27.3603 13.8427C23.6856 13.8428 20.1613 15.343 17.5629 18.0136C15.1099 20.5347 13.6714 23.9042 13.5179 27.451H41.202C41.0486 23.9043 39.6111 20.5347 37.1582 18.0136C34.5598 15.3429 31.035 13.8428 27.3603 13.8427Z" fill="black" />
-                            </svg>
+                        <Link href="/" style={{ display: "flex", alignItems: "center", marginBottom: "0.875rem" }}>
                             <span style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "1rem", letterSpacing: "-0.02em" }}>
-                                Gulaal Int
+                                Gulaal International
                             </span>
                         </Link>
                         <p
@@ -124,6 +122,7 @@ export default function Footer() {
 
             {/* Bottom */}
             <div
+                className="footer-bottom"
                 style={{
                     borderTop: "1px solid rgba(0,0,0,0.06)",
                     maxWidth: "83rem",
@@ -189,6 +188,13 @@ export default function Footer() {
                     </a>
                 </div>
             </div>
+
+            <style>{`
+                @media (max-width: 767px) {
+                    .footer-top { padding: 2rem 1.25rem !important; }
+                    .footer-bottom { padding: 1.25rem !important; }
+                }
+            `}</style>
         </footer>
     );
 }

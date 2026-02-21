@@ -165,6 +165,7 @@ export default function Services() {
             }}
         >
             <div
+                className="section-container"
                 style={{
                     maxWidth: "83rem",
                     margin: "0 auto",
@@ -208,6 +209,7 @@ export default function Services() {
                         className="services-header-grid"
                     >
                         <h2
+                            className="section-heading"
                             style={{
                                 margin: 0,
                                 fontFamily: "Inter, sans-serif",
@@ -373,9 +375,12 @@ export default function Services() {
                     .bento-grid-4 { grid-template-columns: 1fr 1fr !important; }
                     .bento-grid-4 > * { grid-column: span 1 !important; }
                     .services-header-grid { grid-template-columns: 1fr !important; }
+                    .section-container { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+                    .section-heading { font-size: 2.25rem !important; }
                 }
                 @media (max-width: 600px) {
                     .bento-grid-4 { grid-template-columns: 1fr !important; }
+                    .section-heading { font-size: 2rem !important; }
                 }
             `}</style>
         </section>

@@ -27,7 +27,7 @@ const benefits = [
             </svg>
         ),
         title: "Local Expertise",
-        desc: "Deep understanding of the UAE market, regulations, and business landscape — built from experience on the ground.",
+        desc: "Deep understanding of the UAE market, regulations, and business landscape. Built from experience on the ground.",
     },
 ];
 
@@ -110,7 +110,7 @@ export default function WhySection() {
                             letterSpacing: "-0.02em",
                         }}
                     >
-                        We bring local expertise and operational discipline to every engagement — whether it&apos;s online retail or project management.
+                        We bring local expertise and operational discipline to every engagement, whether it&apos;s online retail or project management.
                     </p>
                 </div>
 

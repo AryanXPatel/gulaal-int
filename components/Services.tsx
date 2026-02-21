@@ -18,7 +18,7 @@ const pmServices: BentoCard[] = [
     {
         title: "Execution & Coordination",
         description:
-            "Hands-on management across every phase — keeping teams, timelines, and deliverables aligned.",
+            "Hands-on management across every phase, keeping teams, timelines, and deliverables aligned.",
     },
     {
         title: "Reporting & Oversight",
@@ -36,7 +36,7 @@ const ecomServices: BentoCard[] = [
     {
         title: "Product Curation",
         description:
-            "Carefully selected products for the UAE consumer market — sourced and managed with quality in mind.",
+            "Carefully selected products for the UAE consumer market, sourced and managed with quality in mind.",
     },
     {
         title: "Online Storefronts",
@@ -46,7 +46,7 @@ const ecomServices: BentoCard[] = [
     {
         title: "Fulfillment & Delivery",
         description:
-            "End-to-end logistics — from warehouse to doorstep — ensuring reliable delivery across the UAE.",
+            "End-to-end logistics from warehouse to doorstep, ensuring reliable delivery across the UAE.",
     },
     {
         title: "Market Insights",
@@ -233,7 +233,7 @@ export default function Services() {
                                 maxWidth: "32rem",
                             }}
                         >
-                            Two core capabilities — online retail and project management — delivered with focus and discipline.
+                            Two core capabilities: online retail and project management, delivered with focus and discipline.
                         </p>
                     </div>
                 </div>
@@ -340,7 +340,7 @@ export default function Services() {
                             maxWidth: "32rem",
                         }}
                     >
-                        Based in the UAE — everything we do is built around the local market and its unique pace of growth.
+                        Based in the UAE. Everything we do is built around the local market and its unique pace of growth.
                     </p>
                     <a
                         href="#contact"

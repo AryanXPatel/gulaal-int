@@ -201,7 +201,7 @@ export default function AboutPage() {
                                 }}
                             >
                                 We combine local market knowledge with operational discipline to
-                                deliver results — whether that means getting products to customers
+                                deliver results, whether that means getting products to customers
                                 across the Emirates or managing complex projects from start to finish.
                             </p>
                         </div>

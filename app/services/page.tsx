@@ -269,7 +269,7 @@ export default function ServicesPage() {
                                 maxWidth: "40rem",
                             }}
                         >
-                            We source, curate, and sell products online — operating across
+                            We source, curate, and sell products online, operating across
                             leading platforms to reach customers throughout the Emirates.
                         </p>
                     </div>

@@ -3,7 +3,7 @@ import "./globals.css";
 import { Agentation } from "agentation";
 
 export const metadata: Metadata = {
-  title: "Gulaal International — Online Retail & Project Management in the UAE",
+  title: "Gulaal International | Online Retail & Project Management in the UAE",
   description:
     "Gulaal International is a UAE-based company specializing in online retail and project management across the Emirates.",
   keywords: [
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     "Dubai business",
   ],
   openGraph: {
-    title: "Gulaal International — Online Retail & Project Management in the UAE",
+    title: "Gulaal International | Online Retail & Project Management in the UAE",
     description:
       "A UAE-based company specializing in online retail and project management.",
     type: "website",

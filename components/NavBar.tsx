@@ -1,14 +1,14 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 
 export default function NavBar() {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const links = [
-        { label: "Why Gulaal", href: "#why" },
-        { label: "Who We Serve", href: "#who" },
-        { label: "Services", href: "#services" },
-        { label: "Contact", href: "#contact" },
+        { label: "About", href: "/about" },
+        { label: "Services", href: "/services" },
+        { label: "Contact", href: "/#contact" },
     ];
 
     return (
@@ -39,7 +39,7 @@ export default function NavBar() {
                 {/* Left: Logo + Divider + Nav Links */}
                 <div style={{ display: "flex", alignItems: "center", gap: "2rem" }}>
                     {/* Logo */}
-                    <a
+                    <Link
                         href="/"
                         aria-label="Gulaal International"
                         style={{
@@ -70,7 +70,7 @@ export default function NavBar() {
                         >
                             Gulaal Int
                         </span>
-                    </a>
+                    </Link>
 
                     {/* Divider */}
                     <div
@@ -85,7 +85,7 @@ export default function NavBar() {
                     {/* Desktop Nav Links */}
                     <nav className="hidden-mobile" style={{ display: "flex", gap: "2rem" }}>
                         {links.map((l) => (
-                            <a
+                            <Link
                                 key={l.href}
                                 href={l.href}
                                 style={{
@@ -105,7 +105,7 @@ export default function NavBar() {
                                 onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(0,0,0,0.4)")}
                             >
                                 {l.label}
-                            </a>
+                            </Link>
                         ))}
                     </nav>
                 </div>
@@ -113,8 +113,8 @@ export default function NavBar() {
                 {/* Right: CTA + Hamburger */}
                 <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
                     {/* Outline pill CTA — desktop */}
-                    <a
-                        href="#contact"
+                    <Link
+                        href="/#contact"
                         className="hidden-mobile"
                         style={{
                             display: "flex",
@@ -144,7 +144,7 @@ export default function NavBar() {
                         }}
                     >
                         Get in Touch
-                    </a>
+                    </Link>
 
                     {/* Mobile hamburger */}
                     <button
@@ -184,7 +184,7 @@ export default function NavBar() {
                     }}
                 >
                     {links.map((l) => (
-                        <a
+                        <Link
                             key={l.href}
                             href={l.href}
                             onClick={() => setMenuOpen(false)}
@@ -199,10 +199,10 @@ export default function NavBar() {
                             }}
                         >
                             {l.label}
-                        </a>
+                        </Link>
                     ))}
-                    <a
-                        href="#contact"
+                    <Link
+                        href="/#contact"
                         onClick={() => setMenuOpen(false)}
                         style={{
                             display: "inline-flex",
@@ -220,7 +220,7 @@ export default function NavBar() {
                         }}
                     >
                         Get in Touch
-                    </a>
+                    </Link>
                 </div>
             )}
 

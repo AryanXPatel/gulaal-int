@@ -11,55 +11,47 @@ type BentoCard = {
 // ── Data ───────────────────────────────────────────────────────────────────
 const pmServices: BentoCard[] = [
     {
-        title: "End-to-End Project Delivery",
+        title: "Planning & Scoping",
         description:
-            "From scoping to handover — we own the full lifecycle. No gaps, no dropped balls, just clean execution across every phase.",
-        tag: "Project Management",
+            "Structured roadmaps and clear milestones from the start. Every project begins with a well-defined plan.",
     },
     {
-        title: "Vendor & Supplier Coordination",
+        title: "Execution & Coordination",
         description:
-            "We manage your UAE vendor network so you don't have to. Contracts, timelines, and quality checks handled in one place.",
-        tag: "Project Management",
+            "Hands-on management across every phase — keeping teams, timelines, and deliverables aligned.",
     },
     {
-        title: "Real-Time Reporting",
+        title: "Reporting & Oversight",
         description:
-            "Live dashboards and weekly status reports keep you informed without the noise. Know exactly where your project stands.",
-        tag: "Project Management",
+            "Regular updates and transparent communication throughout the project lifecycle.",
     },
     {
-        title: "Risk & Compliance Management",
+        title: "Local Compliance",
         description:
-            "UAE regulations move fast. We stay ahead of them — flagging risks early and keeping your project legally sound.",
-        tag: "Project Management",
+            "Navigating UAE regulations and requirements so your project stays on track and fully compliant.",
     },
 ];
 
 const ecomServices: BentoCard[] = [
     {
-        title: "Marketplace Launch & Setup",
+        title: "Product Curation",
         description:
-            "Amazon.ae, Noon, Carrefour — we set up your storefront, listings, and logistics from day one.",
-        tag: "E-Commerce",
+            "Carefully selected products for the UAE consumer market — sourced and managed with quality in mind.",
     },
     {
-        title: "Product Listing Optimisation",
+        title: "Online Storefronts",
         description:
-            "SEO-tuned titles, A+ content, and keyword-rich descriptions that convert browsers into buyers in the UAE market.",
-        tag: "E-Commerce",
+            "Operating across leading platforms to reach customers throughout the Emirates.",
     },
     {
-        title: "Inventory & Fulfilment",
+        title: "Fulfillment & Delivery",
         description:
-            "We handle stock levels, warehouse coordination, and last-mile delivery — so you never miss a sale.",
-        tag: "E-Commerce",
+            "End-to-end logistics — from warehouse to doorstep — ensuring reliable delivery across the UAE.",
     },
     {
-        title: "Performance Analytics",
+        title: "Market Insights",
         description:
-            "Sales trends, conversion rates, and competitor benchmarks — all translated into clear actions for growth.",
-        tag: "E-Commerce",
+            "Continuously learning from the market to refine our offerings and serve customers better.",
     },
 ];
 
@@ -163,19 +155,6 @@ const BentoCard = ({
     </div>
 );
 
-// ── ItalicSpan ─────────────────────────────────────────────────────────────
-const ItalicSpan = ({ children }: { children: React.ReactNode }) => (
-    <span
-        style={{
-            fontFamily: "Cormorant Garamond, Georgia, serif",
-            fontStyle: "italic",
-            fontWeight: 400,
-        }}
-    >
-        {children}
-    </span>
-);
-
 // ── Main Component ─────────────────────────────────────────────────────────
 export default function Services() {
     return (
@@ -239,7 +218,7 @@ export default function Services() {
                                 color: "#000",
                             }}
                         >
-                            We&apos;<ItalicSpan>v</ItalicSpan>e done the h<ItalicSpan>a</ItalicSpan>rd part, n<ItalicSpan>o</ItalicSpan>w it&apos;s your turn to gr<ItalicSpan>o</ItalicSpan>w
+                            What we do
                         </h2>
                         <p
                             style={{
@@ -252,7 +231,7 @@ export default function Services() {
                                 maxWidth: "32rem",
                             }}
                         >
-                            Whether you&apos;re launching a project or scaling an online store, everything is designed to flow effortlessly.
+                            Two core capabilities — online retail and project management — delivered with focus and discipline.
                         </p>
                     </div>
                 </div>
@@ -310,7 +289,7 @@ export default function Services() {
                             color: "rgba(0,0,0,0.3)",
                         }}
                     >
-                        E-Commerce
+                        Online Retail
                     </p>
                     <div
                         style={{
@@ -359,7 +338,7 @@ export default function Services() {
                             maxWidth: "32rem",
                         }}
                     >
-                        Built for UAE businesses — every service is tailored to the local market, regulations, and pace of growth.
+                        Based in the UAE — everything we do is built around the local market and its unique pace of growth.
                     </p>
                     <a
                         href="#contact"

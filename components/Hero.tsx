@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, EffectCreative, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -25,8 +25,6 @@ const secondarySlides = [
 ];
 
 export default function Hero() {
-    const [email, setEmail] = useState("");
-
     return (
         <section
             style={{
@@ -132,14 +130,7 @@ export default function Hero() {
                                         fontFamily: "Inter, sans-serif",
                                     }}
                                 >
-                                    Grow your{" "}
-                                    <span className="italic-span">b</span>
-                                    usiness{" "}
-                                    <span className="italic-span">i</span>n the{" "}
-                                    <span className="italic-span">U</span>
-                                    AE — without the{" "}
-                                    <span className="italic-span">g</span>
-                                    uesswork.
+                                    Building commerce and managing projects across the UAE.
                                 </h1>
                                 <div style={{ maxWidth: "23rem" }}>
                                     <p
@@ -153,125 +144,45 @@ export default function Hero() {
                                             fontFamily: "Inter, sans-serif",
                                         }}
                                     >
-                                        End-to-end e-commerce and project management services, built for ambitious brands entering the Gulf market.
+                                        A UAE-based company specializing in online retail and project management.
                                     </p>
                                 </div>
                             </div>
                         </div>
 
-                        {/* Form + social proof block */}
-                        <div
-                            style={{
-                                display: "grid",
-                                gridTemplateColumns: "1fr",
-                                gap: "2.25rem",
-                                placeContent: "start",
-                                placeItems: "start",
-                            }}
-                        >
-                            {/* Email form */}
-                            <form
-                                onSubmit={(e) => {
-                                    e.preventDefault();
-                                    // TODO: wire up to your email service
-                                }}
+                        {/* CTA button */}
+                        <div style={{
+                            display: "flex",
+                            gap: "0.75rem",
+                            justifyContent: "start",
+                            flexWrap: "wrap",
+                        }}>
+                            <Link
+                                href="/#contact"
                                 style={{
-                                    display: "flex",
-                                    gap: "0.75rem",
-                                    justifyContent: "start",
-                                    flexWrap: "wrap",
-                                }}
-                            >
-                                <input
-                                    type="email"
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    placeholder="Enter your email"
-                                    required
-                                    style={{
-                                        font: "inherit",
-                                        border: "none",
-                                        outline: "none",
-                                        borderRadius: "5rem",
-                                        padding: "0.5rem 1rem 0.5rem 1.125rem",
-                                        backgroundColor: "#f2f2f2",
-                                        color: "#000",
-                                        minWidth: "19rem",
-                                        height: "3rem",
-                                        fontSize: "1rem",
-                                        fontWeight: 400,
-                                        lineHeight: 1.5,
-                                        fontFamily: "Inter, sans-serif",
-                                    }}
-                                />
-                                <button
-                                    type="submit"
-                                    style={{
-                                        font: "inherit",
-                                        border: "none",
-                                        borderRadius: "5rem",
-                                        padding: "1rem 1.25rem",
-                                        backgroundColor: "#000",
-                                        color: "#fff",
-                                        cursor: "pointer",
-                                        alignItems: "center",
-                                        lineHeight: 1,
-                                        display: "inline-flex",
-                                        gap: "0.5rem",
-                                        fontSize: "1rem",
-                                        fontWeight: 500,
-                                        fontFamily: "Inter, sans-serif",
-                                        whiteSpace: "nowrap",
-                                        transition: "opacity 0.15s",
-                                    }}
-                                    onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.85")}
-                                    onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
-                                >
-                                    Get Started
-                                </button>
-                            </form>
-
-                            {/* Social proof */}
-                            <div
-                                style={{
-                                    display: "inline-grid",
-                                    gridAutoFlow: "column",
-                                    gridAutoColumns: "auto",
-                                    gridTemplateRows: "auto",
-                                    placeContent: "center start",
-                                    placeItems: "center start",
+                                    font: "inherit",
+                                    border: "none",
+                                    borderRadius: "5rem",
+                                    padding: "1rem 1.5rem",
+                                    backgroundColor: "#000",
+                                    color: "#fff",
+                                    cursor: "pointer",
+                                    alignItems: "center",
+                                    lineHeight: 1,
+                                    display: "inline-flex",
                                     gap: "0.5rem",
-                                    letterSpacing: "-0.02em",
                                     fontSize: "1rem",
                                     fontWeight: 500,
                                     fontFamily: "Inter, sans-serif",
+                                    whiteSpace: "nowrap",
+                                    transition: "opacity 0.15s",
+                                    textDecoration: "none",
                                 }}
+                                onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.85")}
+                                onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
                             >
-                                <img
-                                    src="/isomeet/690126cccb69ed9dab42341b_confirm_users_image.avif"
-                                    alt="Clients"
-                                    width={48}
-                                    height={30}
-                                    style={{
-                                        width: "3rem",
-                                        height: "auto",
-                                        maxWidth: "none",
-                                        display: "inline-block",
-                                        verticalAlign: "middle",
-                                    }}
-                                />
-                                <div>
-                                    50+ brands{" "}
-                                    <span
-                                        style={{
-                                            color: "rgba(0,0,0,0.4)",
-                                            fontWeight: 400,
-                                        }}
-                                    >
-                                        already scaling in the UAE
-                                    </span>
-                                </div>
-                            </div>
+                                Get in Touch
+                            </Link>
                         </div>
                     </div>
 
@@ -441,29 +352,6 @@ export default function Hero() {
                             </div>
                         </div>
 
-                        {/* Background gradient blob */}
-                        <img
-                            src="/isomeet/6901e53513dcf1ea037d2e38_bg-gradient.avif"
-                            alt=""
-                            aria-hidden="true"
-                            width={512}
-                            height={608}
-                            style={{
-                                position: "absolute",
-                                inset: "23% 9% auto auto",
-                                zIndex: 1,
-                                opacity: 0.6,
-                                filter: "blur(100px)",
-                                objectFit: "cover",
-                                objectPosition: "50% 100%",
-                                width: "32rem",
-                                maxWidth: "none",
-                                height: "38rem",
-                                display: "block",
-                                transform: "rotate(162deg)",
-                                pointerEvents: "none",
-                            }}
-                        />
                     </div>
                 </div>
             </div>

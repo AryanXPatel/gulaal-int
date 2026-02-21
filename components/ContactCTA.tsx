@@ -1,38 +1,26 @@
 "use client";
 import { useState } from "react";
 
-function ItalicSpan({ children }: { children: string }) {
-    return (
-        <span style={{ fontFamily: "Cormorant Garamond, Georgia, serif", fontStyle: "italic", fontWeight: 400 }}>
-            {children}
-        </span>
-    );
-}
-
 const faqs = [
     {
-        q: "Can I start a project without a full brief?",
-        a: "Yes — we can help you define the scope during an initial consultation. Many of our best projects started with just a rough idea.",
+        q: "What services does Gulaal International offer?",
+        a: "We specialize in two areas: online retail across the UAE and project management services. We're focused on delivering quality in both.",
     },
     {
-        q: "How long does a typical project take?",
-        a: "It depends on scope, but most projects range from 4–12 weeks. We'll give you a clear timeline before we begin.",
+        q: "Where are you based?",
+        a: "We're based in the UAE and serve clients across the Emirates. All communication and coordination is handled directly by our team.",
+    },
+    {
+        q: "How do I get started?",
+        a: "Fill out the form or reach out via email. We'll schedule a brief conversation to understand your needs and see if we're the right fit.",
     },
     {
         q: "Do you work with international clients?",
-        a: "Absolutely. While we're UAE-based, we work with clients across the GCC and internationally. All communication is handled remotely.",
+        a: "Our primary focus is the UAE market, but we're open to conversations with businesses looking to enter or operate in the region.",
     },
     {
-        q: "What e-commerce platforms do you support?",
-        a: "We work with Shopify, WooCommerce, Magento, and custom builds. We'll recommend the best fit for your business.",
-    },
-    {
-        q: "Is there a minimum project size?",
-        a: "We don't have a strict minimum, but we focus on projects where we can deliver meaningful impact. Reach out and we'll be honest about fit.",
-    },
-    {
-        q: "What happens after the project is delivered?",
-        a: "We offer ongoing support and retainer packages. Many clients continue with us for growth, maintenance, and new initiatives.",
+        q: "What's your typical engagement like?",
+        a: "Every engagement is different, but we always start with a conversation to understand scope and goals before proposing a clear plan.",
     },
 ];
 
@@ -77,7 +65,7 @@ export default function ContactCTA() {
                                     color: "#000",
                                 }}
                             >
-                                St<ItalicSpan>a</ItalicSpan>rt your pr<ItalicSpan>o</ItalicSpan>ject bef<ItalicSpan>o</ItalicSpan>re anyone<ItalicSpan> </ItalicSpan>else d<ItalicSpan>o</ItalicSpan>es
+                                Let&apos;s talk about your next move
                             </h2>
                         </div>
 
@@ -141,7 +129,7 @@ export default function ContactCTA() {
                                         What service are you interested in?
                                     </label>
                                     <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                                        {["Project Management", "E-Commerce Setup", "Both"].map((opt) => (
+                                        {["Project Management", "Online Retail", "General Inquiry"].map((opt) => (
                                             <label
                                                 key={opt}
                                                 style={{

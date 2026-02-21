@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
 @import "tailwindcss";
 
 @theme {
@@ -19,7 +19,6 @@
   --color-blue: #d6eeff;
 
   /* ── Typography ── */
-  --font-display: "Cormorant Garamond", Georgia, serif;
   --font-body: "Inter", system-ui, sans-serif;
 
   /* ── Spacing Scale ── */
@@ -152,13 +151,6 @@
 
 @utility section-padding {
   padding-block: var(--spacing-section);
-}
-
-/* ── Italic letter span (isomeet signature style) ── */
-.italic-span {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-style: italic;
-  font-weight: 400;
 }
 
 /* ── NavBar ── */

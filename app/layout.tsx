@@ -3,28 +3,27 @@ import "./globals.css";
 import { Agentation } from "agentation";
 
 export const metadata: Metadata = {
-  title: "Gulaal International — E-commerce & Project Management in UAE",
+  title: "Gulaal International — Online Retail & Project Management in the UAE",
   description:
-    "Gulaal International delivers end-to-end e-commerce solutions and expert project management services for ambitious businesses in the UAE and MENA region.",
+    "Gulaal International is a UAE-based company specializing in online retail and project management across the Emirates.",
   keywords: [
-    "e-commerce UAE",
-    "project management UAE",
     "Gulaal International",
-    "Dubai e-commerce",
-    "UAE business services",
-    "MENA project management",
+    "UAE business",
+    "online retail UAE",
+    "project management Dubai",
+    "Dubai business",
   ],
   openGraph: {
-    title: "Gulaal International — E-commerce & Project Management in UAE",
+    title: "Gulaal International — Online Retail & Project Management in the UAE",
     description:
-      "End-to-end e-commerce solutions and expert project management for UAE businesses.",
+      "A UAE-based company specializing in online retail and project management.",
     type: "website",
     locale: "en_AE",
   },
   twitter: {
     card: "summary_large_image",
     title: "Gulaal International",
-    description: "E-commerce & Project Management experts in the UAE.",
+    description: "Online retail and project management in the UAE.",
   },
 };
 

@@ -1,9 +1,8 @@
 "use client";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, EffectCreative, Pagination } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
-import "swiper/css/effect-creative";
 import "swiper/css/pagination";
 
 // Main slider — local Gulaal assets (square images, match 625×611 slot perfectly)
@@ -15,14 +14,6 @@ const mainSlides = [
     "/gulaal/gulaal_pm_office_1771392911229.png",
 ];
 
-// Secondary slider — different Gulaal assets, cropped landscape via object-fit
-const secondarySlides = [
-    "/gulaal/gulaal_ecommerce_ops_1771393005370.png",
-    "/gulaal/gulaal_boardroom_team_1771393476158.png",
-    "/gulaal/gulaal_construction_site_1771393420757.png",
-    "/gulaal/gulaal_pm_site_meeting_1771393042210.png",
-    "/gulaal/gulaal_ecommerce_ops_1771393316385.png",
-];
 
 export default function Hero() {
     return (
@@ -133,7 +124,7 @@ export default function Hero() {
                                         fontFamily: "Inter, sans-serif",
                                     }}
                                 >
-                                    Building commerce and managing projects across the UAE.
+                                    Building E-commerce and managing projects across the UAE.
                                 </h1>
                                 <div style={{ maxWidth: "23rem" }}>
                                     <p
@@ -280,82 +271,6 @@ export default function Hero() {
                                 </Swiper>
                             </div>
 
-                            {/* Secondary vertical creative Swiper */}
-                            <div
-                                className="hero-slider-secondary"
-                                style={{
-                                    position: "absolute",
-                                    inset: "auto auto 3rem -5.8rem",
-                                    overflow: "hidden",
-                                    maskImage:
-                                        "linear-gradient(rgba(0,0,0,0) 0%, rgb(255,255,255) 10%, rgb(255,255,255) 90%, rgba(0,0,0,0) 100%)",
-                                    WebkitMaskImage:
-                                        "linear-gradient(rgba(0,0,0,0) 0%, rgb(255,255,255) 10%, rgb(255,255,255) 90%, rgba(0,0,0,0) 100%)",
-                                }}
-                            >
-                                <Swiper
-                                    modules={[Autoplay, EffectCreative]}
-                                    effect="creative"
-                                    creativeEffect={{
-                                        prev: {
-                                            translate: [0, "-120%", -200],
-                                            opacity: 0,
-                                        },
-                                        next: {
-                                            translate: [0, "120%", -200],
-                                            opacity: 0,
-                                        },
-                                    }}
-                                    direction="vertical"
-                                    loop
-                                    autoplay={{ delay: 3000, disableOnInteraction: false }}
-                                    style={{
-                                        padding: "3rem 5rem 0",
-                                        overflow: "visible",
-                                        width: "100%",
-                                        maxWidth: "none",
-                                        height: "18rem",
-                                    }}
-                                >
-                                    {secondarySlides.map((src, i) => (
-                                        <SwiperSlide
-                                            key={i}
-                                            style={{
-                                                overflow: "hidden",
-                                                alignItems: "flex-start",
-                                                display: "flex",
-                                                flexFlow: "column",
-                                            }}
-                                        >
-                                            <div
-                                                style={{
-                                                    borderRadius: "1rem",
-                                                    overflow: "clip",
-                                                    boxShadow: "rgba(13,32,47,0.04) 0px 0px 14px",
-                                                    display: "flex",
-                                                    flexFlow: "column",
-                                                    placeItems: "start center",
-                                                }}
-                                            >
-                                                <img
-                                                    src={src}
-                                                    alt={`Detail ${i + 1}`}
-                                                    width={270}
-                                                    height={111}
-                                                    style={{
-                                                        width: "16.875rem",
-                                                        height: "6.9375rem",
-                                                        display: "block",
-                                                        objectFit: "cover",
-                                                        objectPosition: "center 30%",
-                                                        maxWidth: "100%",
-                                                    }}
-                                                />
-                                            </div>
-                                        </SwiperSlide>
-                                    ))}
-                                </Swiper>
-                            </div>
                         </div>
 
                     </div>
@@ -379,9 +294,6 @@ export default function Hero() {
           .hero-slider-main {
             width: 100% !important;
             margin-right: 0 !important;
-          }
-          .hero-slider-secondary {
-            display: none !important;
           }
           .hero-slider-wrapper {
             margin-left: 0 !important;

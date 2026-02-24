@@ -68,22 +68,6 @@ export default function WhySection() {
                         marginBottom: "5rem",
                     }}
                 >
-                    <div style={{ display: "inline-flex" }}>
-                        <div
-                            style={{
-                                border: "1px solid rgba(0,0,0,0.1)",
-                                borderRadius: "0.5rem",
-                                padding: "0.25rem 1rem",
-                                fontSize: "0.875rem",
-                                fontWeight: 500,
-                                fontFamily: "Inter, sans-serif",
-                                color: "rgba(0,0,0,0.6)",
-                                letterSpacing: "-0.01em",
-                            }}
-                        >
-                            Why Gulaal
-                        </div>
-                    </div>
                     <h2
                         className="section-heading"
                         style={{
@@ -96,22 +80,8 @@ export default function WhySection() {
                             color: "#000",
                         }}
                     >
-                        Why businesses choose Gulaal
+                        Why businesses choose us?
                     </h2>
-                    <p
-                        style={{
-                            margin: 0,
-                            fontFamily: "Inter, sans-serif",
-                            fontSize: "1.125rem",
-                            fontWeight: 400,
-                            color: "rgba(0,0,0,0.4)",
-                            lineHeight: 1.5,
-                            maxWidth: "32rem",
-                            letterSpacing: "-0.02em",
-                        }}
-                    >
-                        We bring local expertise and operational discipline to every engagement, whether it&apos;s online retail or project management.
-                    </p>
                 </div>
 
                 {/* ── 3-col benefit cards ── */}

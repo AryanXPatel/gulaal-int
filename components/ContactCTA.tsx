@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const faqs = [
     {
@@ -27,6 +27,14 @@ const faqs = [
 export default function ContactCTA() {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
     const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+    // Auto-dismiss success/error messages after 5 seconds
+    useEffect(() => {
+        if (status === "success" || status === "error") {
+            const timer = setTimeout(() => setStatus("idle"), 5000);
+            return () => clearTimeout(timer);
+        }
+    }, [status]);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -185,6 +193,7 @@ export default function ContactCTA() {
                                 <button
                                     type="submit"
                                     disabled={status === "loading"}
+                                    className="btn-press"
                                     style={{
                                         display: "inline-flex",
                                         alignItems: "center",
@@ -200,26 +209,35 @@ export default function ContactCTA() {
                                         cursor: status === "loading" ? "not-allowed" : "pointer",
                                         marginTop: "0.5rem",
                                         lineHeight: 1,
-                                        transition: "opacity 0.15s",
                                         whiteSpace: "nowrap",
                                         opacity: status === "loading" ? 0.6 : 1,
                                     }}
-                                    onMouseEnter={(e) => { if (status !== "loading") e.currentTarget.style.opacity = "0.85"; }}
-                                    onMouseLeave={(e) => { if (status !== "loading") e.currentTarget.style.opacity = "1"; }}
                                 >
+                                    {status === "loading" && (
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style={{ animation: "spin 0.8s linear infinite" }}>
+                                            <circle cx="8" cy="8" r="6.5" stroke="rgba(255,255,255,0.3)" strokeWidth="2" />
+                                            <path d="M14.5 8a6.5 6.5 0 00-6.5-6.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" />
+                                        </svg>
+                                    )}
                                     {status === "loading" ? "Sending..." : "Book a Free Call"}
                                 </button>
 
-                                {status === "success" && (
-                                    <p style={{ fontSize: "0.875rem", color: "#16a34a", margin: 0 }}>
-                                        Thank you. We will get back to you shortly.
-                                    </p>
-                                )}
-                                {status === "error" && (
-                                    <p style={{ fontSize: "0.875rem", color: "#dc2626", margin: 0 }}>
-                                        Something went wrong. Please try again or email us directly.
-                                    </p>
-                                )}
+                                {/* Status messages with fade transition */}
+                                <div
+                                    className={`form-status ${status === "success" || status === "error" ? "show" : ""}`}
+                                    aria-live="polite"
+                                >
+                                    {status === "success" && (
+                                        <p style={{ fontSize: "0.875rem", color: "#16a34a", margin: 0 }}>
+                                            Thank you. We will get back to you shortly.
+                                        </p>
+                                    )}
+                                    {status === "error" && (
+                                        <p style={{ fontSize: "0.875rem", color: "#dc2626", margin: 0 }}>
+                                            Something went wrong. Please try again or email us directly.
+                                        </p>
+                                    )}
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -236,6 +254,7 @@ export default function ContactCTA() {
                                 >
                                     <button
                                         onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                                        className="faq-hover"
                                         style={{
                                             width: "100%",
                                             display: "flex",
@@ -318,6 +337,9 @@ export default function ContactCTA() {
             </div>
 
             <style>{`
+        @keyframes spin {
+          to { transform: rotate(360deg); }
+        }
         @media (max-width: 767px) {
           .contact-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
           .section-container { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
@@ -333,8 +355,8 @@ const inputStyle: React.CSSProperties = {
     padding: "0.75rem 1rem",
     border: "1px solid rgba(0,0,0,0.12)",
     borderRadius: "0.5rem",
-    outline: "none",
     background: "#fff",
     color: "#000",
     width: "100%",
+    transition: "box-shadow 0.15s ease, border-color 0.15s ease",
 };

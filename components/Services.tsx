@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 // ── Types ──────────────────────────────────────────────────────────────────
 type BentoCard = {
     title: string;
@@ -92,6 +94,7 @@ const BentoCard = ({
     style,
 }: BentoCard & { style?: React.CSSProperties }) => (
     <div
+        className="bento-hover"
         style={{
             position: "relative",
             border: "1px dashed rgba(0,0,0,0.18)",
@@ -333,8 +336,9 @@ export default function Services() {
                     >
                         Based in the UAE. Everything we do is built around the local market and its unique pace of growth.
                     </p>
-                    <a
-                        href="#contact"
+                    <Link
+                        href="/#contact"
+                        className="btn-press"
                         style={{
                             display: "inline-flex",
                             alignItems: "center",
@@ -347,15 +351,12 @@ export default function Services() {
                             borderRadius: "5rem",
                             textDecoration: "none",
                             letterSpacing: "-0.01em",
-                            transition: "opacity 0.15s",
                             whiteSpace: "nowrap",
                             flexShrink: 0,
                         }}
-                        onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.8")}
-                        onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
                     >
                         Start a project →
-                    </a>
+                    </Link>
                 </div>
             </div>
 

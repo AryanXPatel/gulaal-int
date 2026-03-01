@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import PageAnimations from "@/components/PageAnimations";
 
 export const metadata: Metadata = {
     title: "Services | Gulaal International",
@@ -87,6 +88,7 @@ const BentoCard = ({
     style,
 }: BentoCardData & { style?: React.CSSProperties }) => (
     <div
+        className="bento-hover"
         style={{
             position: "relative",
             border: "1px dashed rgba(0,0,0,0.18)",
@@ -151,6 +153,7 @@ export default function ServicesPage() {
     return (
         <main>
             <NavBar />
+            <PageAnimations />
 
             {/* ── Page Hero ── */}
             <section
@@ -173,7 +176,7 @@ export default function ServicesPage() {
                     }}
                 >
                     {/* Pill label */}
-                    <div style={{ display: "inline-flex" }}>
+                    <div className="fade-in-up" style={{ display: "inline-flex" }}>
                         <div
                             style={{
                                 border: "1px solid rgba(0,0,0,0.1)",
@@ -199,13 +202,14 @@ export default function ServicesPage() {
                             letterSpacing: "-0.02em",
                             color: "#000",
                         }}
-                        className="services-page-hero-heading"
+                        className="services-page-hero-heading fade-in-up delay-1"
                     >
                         What we do.
                     </h1>
 
                     {/* Description */}
                     <p
+                        className="fade-in-up delay-2"
                         style={{
                             margin: 0,
                             fontSize: "1.125rem",
@@ -238,9 +242,12 @@ export default function ServicesPage() {
                         gap: "2rem",
                     }}
                 >
-                    <SectionLabel>Online Retail</SectionLabel>
+                    <div className="fade-in-up">
+                        <SectionLabel>Online Retail</SectionLabel>
+                    </div>
 
                     <div
+                        className="fade-in-up delay-1"
                         style={{
                             display: "flex",
                             flexDirection: "column",
@@ -282,7 +289,7 @@ export default function ServicesPage() {
                             gridTemplateColumns: "repeat(3, 1fr)",
                             gap: "1rem",
                         }}
-                        className="services-bento-grid"
+                        className="services-bento-grid fade-in-up delay-2"
                     >
                         {retailCards.map((card, i) => (
                             <BentoCard key={i} {...card} />
@@ -309,9 +316,12 @@ export default function ServicesPage() {
                         gap: "2rem",
                     }}
                 >
-                    <SectionLabel>Project Management</SectionLabel>
+                    <div className="fade-in-up">
+                        <SectionLabel>Project Management</SectionLabel>
+                    </div>
 
                     <div
+                        className="fade-in-up delay-1"
                         style={{
                             display: "flex",
                             flexDirection: "column",
@@ -353,7 +363,7 @@ export default function ServicesPage() {
                             gridTemplateColumns: "repeat(3, 1fr)",
                             gap: "1rem",
                         }}
-                        className="services-bento-grid"
+                        className="services-bento-grid fade-in-up delay-2"
                     >
                         {pmCards.map((card, i) => (
                             <BentoCard key={i} {...card} />
@@ -379,6 +389,7 @@ export default function ServicesPage() {
                     }}
                 >
                     <div
+                        className="fade-in-up"
                         style={{
                             display: "flex",
                             alignItems: "center",
@@ -388,7 +399,6 @@ export default function ServicesPage() {
                             gap: "2rem",
                             flexWrap: "wrap",
                         }}
-                        className="services-cta-strip"
                     >
                         <p
                             style={{
@@ -415,7 +425,6 @@ export default function ServicesPage() {
                                 borderRadius: "5rem",
                                 textDecoration: "none",
                                 letterSpacing: "-0.01em",
-                                transition: "opacity 0.15s",
                                 whiteSpace: "nowrap",
                                 flexShrink: 0,
                             }}

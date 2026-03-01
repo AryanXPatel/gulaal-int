@@ -25,29 +25,18 @@
   /* ── Shadows ── */
   --shadow-nav: 0 1px 0 rgba(0, 0, 0, 0.08);
 
-  /* ── Animations ── */
-  --animate-fade-up: fade-up 0.6s ease-out both;
-  --animate-fade-in: fade-in 0.4s ease-out both;
+  /* ── Easing ── */
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
 
-  @keyframes fade-up {
+  /* ── Hero Entrance ── */
+  @keyframes hero-entrance {
     from {
       opacity: 0;
-      transform: translateY(5rem);
+      transform: translateY(1.5rem);
     }
-
     to {
       opacity: 1;
       transform: translateY(0);
-    }
-  }
-
-  @keyframes fade-in {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
     }
   }
 }
@@ -119,55 +108,108 @@
   padding-block: var(--spacing-section);
 }
 
-/* ── NavBar ── */
-.navbar-scrolled {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow: var(--shadow-nav);
-}
-
-/* ── Scroll Reveal ── */
-.reveal {
+/* ── Hero Entrance Animation ── */
+.hero-enter {
   opacity: 0;
-  transform: translateY(5rem);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  animation: hero-entrance 0.6s var(--ease-out-quart) both;
 }
+.hero-enter-1 { animation-delay: 0ms; }
+.hero-enter-2 { animation-delay: 100ms; }
+.hero-enter-3 { animation-delay: 200ms; }
+.hero-enter-4 { animation-delay: 300ms; }
+.hero-enter-5 { animation-delay: 450ms; }
 
-.reveal.visible {
+/* ── Scroll Reveal (triggered by IntersectionObserver) ── */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity 0.7s var(--ease-out-quart), transform 0.7s var(--ease-out-quart);
+}
+.fade-in-up.visible {
   opacity: 1;
   transform: translateY(0);
 }
+.fade-in-up.delay-1 { transition-delay: 0.1s; }
+.fade-in-up.delay-2 { transition-delay: 0.2s; }
+.fade-in-up.delay-3 { transition-delay: 0.3s; }
+.fade-in-up.delay-4 { transition-delay: 0.4s; }
 
-.reveal-delay-1 {
-  transition-delay: 0.1s;
+/* ── NavBar Scroll State ── */
+.navbar-scrolled {
+  background: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
 }
 
-.reveal-delay-2 {
-  transition-delay: 0.2s;
-}
-
-.reveal-delay-3 {
-  transition-delay: 0.3s;
-}
-
-/* ── Accordion ── */
-.accordion-content {
+/* ── Mobile Menu Animation ── */
+.mobile-menu {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.35s ease;
+  transition: max-height 0.35s var(--ease-out-quart), opacity 0.3s ease;
+  opacity: 0;
+}
+.mobile-menu.open {
+  max-height: 400px;
+  opacity: 1;
 }
 
-.accordion-content.open {
-  max-height: 500px;
+/* ── Card Hover Effect ── */
+.card-hover {
+  transition: transform 0.25s var(--ease-out-quart), box-shadow 0.25s var(--ease-out-quart);
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
 }
 
-/* ── Swiper overrides ── */
+/* ── Bento Card Hover ── */
+.bento-hover {
+  transition: transform 0.25s var(--ease-out-quart), box-shadow 0.25s var(--ease-out-quart), border-color 0.25s ease;
+}
+.bento-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.28);
+}
+
+/* ── FAQ Button Hover ── */
+.faq-hover {
+  transition: background 0.2s ease;
+  border-radius: 0.5rem;
+  margin: 0 -0.5rem;
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+}
+.faq-hover:hover {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+/* ── Form Focus States ── */
+input:focus-visible,
+textarea:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.12) !important;
+  border-color: rgba(0, 0, 0, 0.3) !important;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+/* ── Button Press Effect ── */
+.btn-press {
+  transition: transform 0.1s ease, opacity 0.15s ease;
+}
+.btn-press:hover {
+  opacity: 0.88;
+}
+.btn-press:active {
+  transform: translateY(1px);
+}
+
+/* ── Swiper Overrides ── */
 .swiper-pagination-bullet {
   background: rgba(0, 0, 0, 0.1) !important;
   opacity: 1 !important;
   width: 0.5rem !important;
   height: 0.5rem !important;
+  transition: width 0.25s var(--ease-out-quart), height 0.25s var(--ease-out-quart), background 0.25s ease !important;
 }
 
 .swiper-pagination-bullet-active {
@@ -176,7 +218,45 @@
   height: 0.8rem !important;
 }
 
-/* ── Hover utilities (CSS-based, replaces JS onMouseEnter/Leave) ── */
+/* ── Hover Opacity Utility ── */
+.hover-opacity {
+  transition: opacity 0.15s ease, transform 0.1s ease;
+}
 .hover-opacity:hover {
   opacity: 0.85;
+}
+.hover-opacity:active {
+  transform: translateY(1px);
+}
+
+/* ── Form Status Fade ── */
+.form-status {
+  transition: opacity 0.3s ease, transform 0.3s var(--ease-out-quart);
+  opacity: 0;
+  transform: translateY(0.25rem);
+}
+.form-status.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .fade-in-up {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .hero-enter {
+    opacity: 1 !important;
+  }
 }

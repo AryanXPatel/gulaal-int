@@ -96,6 +96,7 @@ export default function WhySection() {
                         <div
                             key={i}
                             ref={(el) => { if (el) cardsRef.current[i] = el; }}
+                            className="card-hover"
                             style={{
                                 background: "#fff",
                                 border: "1px solid rgba(0,0,0,0.08)",

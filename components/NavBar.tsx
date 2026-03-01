@@ -1,9 +1,19 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function NavBar() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    const pathname = usePathname();
+
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 50);
+        onScroll();
+        window.addEventListener("scroll", onScroll, { passive: true });
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
 
     const links = [
         { label: "About", href: "/about" },
@@ -11,8 +21,14 @@ export default function NavBar() {
         { label: "Contact", href: "/#contact" },
     ];
 
+    const isActive = (href: string) => {
+        if (href === "/#contact") return false;
+        return pathname === href;
+    };
+
     return (
         <div
+            className={scrolled ? "navbar-scrolled" : ""}
             style={{
                 position: "fixed",
                 top: 0,
@@ -23,6 +39,7 @@ export default function NavBar() {
                 backdropFilter: "blur(56px)",
                 WebkitBackdropFilter: "blur(56px)",
                 borderBottom: "1px solid rgba(0,0,0,0.1)",
+                transition: "background 0.3s ease, box-shadow 0.3s ease",
             }}
         >
             <div
@@ -82,7 +99,7 @@ export default function NavBar() {
                                 style={{
                                             fontSize: "1rem",
                                     fontWeight: 400,
-                                    color: "rgba(0,0,0,0.4)",
+                                    color: isActive(l.href) ? "#000" : "rgba(0,0,0,0.4)",
                                     padding: "0.25rem 0",
                                     borderBottom: "1px solid transparent",
                                     textDecoration: "none",
@@ -92,7 +109,9 @@ export default function NavBar() {
                                     display: "inline-block",
                                 }}
                                 onMouseEnter={(e) => (e.currentTarget.style.color = "#000")}
-                                onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(0,0,0,0.4)")}
+                                onMouseLeave={(e) => {
+                                    if (!isActive(l.href)) e.currentTarget.style.color = "rgba(0,0,0,0.4)";
+                                }}
                             >
                                 {l.label}
                             </Link>
@@ -147,6 +166,7 @@ export default function NavBar() {
                             padding: "0.5rem",
                         }}
                         aria-label="Menu"
+                        aria-expanded={menuOpen}
                     >
                         {menuOpen ? (
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -161,18 +181,18 @@ export default function NavBar() {
                 </div>
             </div>
 
-            {/* Mobile Menu */}
-            {menuOpen && (
-                <div
-                    className="nav-mobile-menu"
-                    style={{
-                        background: "#fffffff5",
-                        backdropFilter: "blur(56px)",
-                        WebkitBackdropFilter: "blur(56px)",
-                        borderTop: "1px solid rgba(0,0,0,0.08)",
-                        padding: "1rem 3.5rem 1.5rem",
-                    }}
-                >
+            {/* Mobile Menu — always rendered, animated via CSS */}
+            <div
+                className={`nav-mobile-menu mobile-menu ${menuOpen ? "open" : ""}`}
+                style={{
+                    background: "#fffffff5",
+                    backdropFilter: "blur(56px)",
+                    WebkitBackdropFilter: "blur(56px)",
+                    borderTop: "1px solid rgba(0,0,0,0.08)",
+                    padding: "0 3.5rem",
+                }}
+            >
+                <div style={{ padding: "1rem 0 1.5rem" }}>
                     {links.map((l) => (
                         <Link
                             key={l.href}
@@ -181,8 +201,8 @@ export default function NavBar() {
                             style={{
                                 display: "block",
                                     fontSize: "1rem",
-                                fontWeight: 400,
-                                color: "rgba(0,0,0,0.6)",
+                                fontWeight: isActive(l.href) ? 500 : 400,
+                                color: isActive(l.href) ? "#000" : "rgba(0,0,0,0.6)",
                                 padding: "0.75rem 0",
                                 borderBottom: "1px solid rgba(0,0,0,0.06)",
                             }}
@@ -210,7 +230,7 @@ export default function NavBar() {
                         Get in Touch
                     </Link>
                 </div>
-            )}
+            </div>
 
             <style>{`
         @media (max-width: 767px) {
@@ -221,6 +241,7 @@ export default function NavBar() {
         }
         @media (min-width: 768px) {
           .show-mobile { display: none !important; }
+          .mobile-menu { display: none !important; }
         }
       `}</style>
         </div>

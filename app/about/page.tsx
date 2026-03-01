@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import PageAnimations from "@/components/PageAnimations";
 
 export const metadata: Metadata = {
     title: "About | Gulaal International",
@@ -75,6 +76,7 @@ export default function AboutPage() {
     return (
         <main>
             <NavBar />
+            <PageAnimations />
 
             {/* ════════════════════════════════════════════════
                 Section 1 — Page Hero
@@ -105,7 +107,7 @@ export default function AboutPage() {
                         }}
                     >
                         {/* Pill */}
-                        <div style={{ display: "inline-flex" }}>
+                        <div className="fade-in-up" style={{ display: "inline-flex" }}>
                             <div
                                 style={{
                                     border: "1px solid rgba(0,0,0,0.1)",
@@ -123,7 +125,7 @@ export default function AboutPage() {
 
                         {/* Heading */}
                         <h1
-                            className="about-hero-heading"
+                            className="about-hero-heading fade-in-up delay-1"
                             style={{
                                 margin: 0,
                                 fontWeight: 400,
@@ -138,6 +140,7 @@ export default function AboutPage() {
 
                         {/* Description */}
                         <p
+                            className="fade-in-up delay-2"
                             style={{
                                 margin: 0,
                                 fontSize: "1.125rem",
@@ -169,7 +172,7 @@ export default function AboutPage() {
             >
                 <div className="about-container" style={{ maxWidth: "83rem", margin: "0 auto", padding: "0 3.5rem" }}>
                     {/* Pill */}
-                    <div style={{ display: "inline-flex", marginBottom: "2.5rem" }}>
+                    <div className="fade-in-up" style={{ display: "inline-flex", marginBottom: "2.5rem" }}>
                         <div
                             style={{
                                 border: "1px solid rgba(0,0,0,0.1)",
@@ -186,7 +189,7 @@ export default function AboutPage() {
                     </div>
 
                     <div
-                        className="about-mission-grid"
+                        className="about-mission-grid fade-in-up delay-1"
                         style={{
                             display: "grid",
                             gridTemplateColumns: "1fr 1fr",
@@ -223,6 +226,7 @@ export default function AboutPage() {
                             {highlights.map((item, i) => (
                                 <div
                                     key={i}
+                                    className="card-hover"
                                     style={{
                                         border: "1px solid rgba(0,0,0,0.08)",
                                         borderRadius: "1rem",
@@ -276,7 +280,7 @@ export default function AboutPage() {
                             marginBottom: "5rem",
                         }}
                     >
-                        <div style={{ display: "inline-flex" }}>
+                        <div className="fade-in-up" style={{ display: "inline-flex" }}>
                             <div
                                 style={{
                                     border: "1px solid rgba(0,0,0,0.1)",
@@ -292,7 +296,7 @@ export default function AboutPage() {
                             </div>
                         </div>
                         <h2
-                            className="about-section-heading"
+                            className="about-section-heading fade-in-up delay-1"
                             style={{
                                 margin: 0,
                                 fontWeight: 400,
@@ -318,6 +322,7 @@ export default function AboutPage() {
                         {values.map((v, i) => (
                             <div
                                 key={i}
+                                className={`card-hover fade-in-up delay-${i + 1}`}
                                 style={{
                                     background: "#fff",
                                     border: "1px solid rgba(0,0,0,0.08)",
@@ -396,7 +401,7 @@ export default function AboutPage() {
                     }}
                 >
                     <h2
-                        className="about-section-heading"
+                        className="about-section-heading fade-in-up"
                         style={{
                             margin: 0,
                             fontWeight: 400,
@@ -410,7 +415,7 @@ export default function AboutPage() {
                     </h2>
                     <Link
                         href="/#contact"
-                        className="hover-opacity"
+                        className="hover-opacity fade-in-up delay-1"
                         style={{
                             font: "inherit",
                             border: "none",
@@ -426,7 +431,6 @@ export default function AboutPage() {
                             fontSize: "1rem",
                             fontWeight: 500,
                             whiteSpace: "nowrap",
-                            transition: "opacity 0.15s",
                             textDecoration: "none",
                         }}
                     >

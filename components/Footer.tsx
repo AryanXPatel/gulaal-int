@@ -99,7 +99,7 @@ export default function Footer() {
                                 Email
                             </div>
                             <a
-                                href="mailto:hello@gulaalinternational.com"
+                                href="mailto:contact@gulaal-international.ae"
                                 style={{
                                     fontSize: "0.9375rem",
                                     color: "rgba(0,0,0,0.7)",
@@ -108,7 +108,7 @@ export default function Footer() {
                                 onMouseEnter={(e) => (e.currentTarget.style.color = "#000")}
                                 onMouseLeave={(e) => (e.currentTarget.style.color = "rgba(0,0,0,0.7)")}
                             >
-                                hello@gulaalinternational.com
+                                contact@gulaal-international.ae
                             </a>
                         </div>
                     </div>

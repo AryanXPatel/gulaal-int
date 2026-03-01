@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://gulaalinternational.com/sitemap.xml",
+    sitemap: "https://gulaal-international.ae/sitemap.xml",
   };
 }

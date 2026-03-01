@@ -82,6 +82,7 @@ export default function Hero() {
                         >
                             {/* Badge */}
                             <div
+                                className="hero-enter hero-enter-1"
                                 style={{
                                     display: "grid",
                                     gridAutoFlow: "column",
@@ -115,7 +116,7 @@ export default function Hero() {
                                 }}
                             >
                                 <h1
-                                    className="hero-heading"
+                                    className="hero-heading hero-enter hero-enter-2"
                                     style={{
                                         margin: 0,
                                         letterSpacing: "-0.02em",
@@ -126,7 +127,7 @@ export default function Hero() {
                                 >
                                     Building E-commerce and managing projects across the UAE.
                                 </h1>
-                                <div style={{ maxWidth: "23rem" }}>
+                                <div className="hero-enter hero-enter-3" style={{ maxWidth: "23rem" }}>
                                     <p
                                         style={{
                                             margin: 0,
@@ -144,7 +145,7 @@ export default function Hero() {
                         </div>
 
                         {/* CTA button */}
-                        <div style={{
+                        <div className="hero-enter hero-enter-4" style={{
                             display: "flex",
                             gap: "0.75rem",
                             justifyContent: "start",
@@ -152,6 +153,7 @@ export default function Hero() {
                         }}>
                             <Link
                                 href="/#contact"
+                                className="btn-press"
                                 style={{
                                     font: "inherit",
                                     border: "none",
@@ -167,11 +169,8 @@ export default function Hero() {
                                     fontSize: "1rem",
                                     fontWeight: 500,
                                     whiteSpace: "nowrap",
-                                    transition: "opacity 0.15s",
                                     textDecoration: "none",
                                 }}
-                                onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.85")}
-                                onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
                             >
                                 Get in Touch
                             </Link>
@@ -180,7 +179,7 @@ export default function Hero() {
 
                     {/* ── RIGHT COLUMN — Sliders ── */}
                     <div
-                        className="hero-slider-wrapper"
+                        className="hero-slider-wrapper hero-enter hero-enter-5"
                         style={{
                             zIndex: 1,
                             justifyContent: "flex-start",

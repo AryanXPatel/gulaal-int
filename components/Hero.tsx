@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
@@ -121,7 +122,6 @@ export default function Hero() {
                                         fontSize: "3.75rem",
                                         fontWeight: 400,
                                         lineHeight: 1.12,
-                                        fontFamily: "Inter, sans-serif",
                                     }}
                                 >
                                     Building E-commerce and managing projects across the UAE.
@@ -135,7 +135,6 @@ export default function Hero() {
                                             fontSize: "1.125rem",
                                             fontWeight: 400,
                                             lineHeight: 1.5,
-                                            fontFamily: "Inter, sans-serif",
                                         }}
                                     >
                                         A UAE-based company specializing in online retail and project management.
@@ -167,7 +166,6 @@ export default function Hero() {
                                     gap: "0.5rem",
                                     fontSize: "1rem",
                                     fontWeight: 500,
-                                    fontFamily: "Inter, sans-serif",
                                     whiteSpace: "nowrap",
                                     transition: "opacity 0.15s",
                                     textDecoration: "none",
@@ -253,11 +251,12 @@ export default function Hero() {
                                                         "rgba(0,0,0,0.1) 2px 7px 15px, rgba(0,0,0,0.09) 8px 27px 28px",
                                                 }}
                                             >
-                                                <img
+                                                <Image
                                                     src={src}
                                                     alt={`Slide ${i + 1}`}
                                                     width={625}
                                                     height={611}
+                                                    priority={i === 0}
                                                     style={{
                                                         width: "100%",
                                                         height: "auto",

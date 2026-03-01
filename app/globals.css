@@ -1,8 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap");
 @import "tailwindcss";
 
 @theme {
-  /* ── Brand Colors (isomeet: pure black/white) ── */
+  /* ── Brand Colors ── */
   --color-background: #ffffff;
   --color-foreground: #000000;
   --color-primary: #000000;
@@ -11,15 +10,6 @@
   --color-border: rgba(0, 0, 0, 0.1);
   --color-surface: #f5f5f5;
   --color-card: #ffffff;
-
-  /* Card accent colors (isomeet feature cards) */
-  --color-violet: #e8e0ff;
-  --color-green: #d4f5e2;
-  --color-pink: #fde8f0;
-  --color-blue: #d6eeff;
-
-  /* ── Typography ── */
-  --font-body: "Inter", system-ui, sans-serif;
 
   /* ── Spacing Scale ── */
   --spacing-section: 8.25rem;
@@ -33,35 +23,11 @@
   --radius-full: 9999px;
 
   /* ── Shadows ── */
-  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.04);
-  --shadow-card-hover: 0 4px 24px rgba(0, 0, 0, 0.10), 0 1px 4px rgba(0, 0, 0, 0.06);
   --shadow-nav: 0 1px 0 rgba(0, 0, 0, 0.08);
 
   /* ── Animations ── */
-  --animate-marquee: marquee 30s linear infinite;
-  --animate-marquee-reverse: marquee-reverse 30s linear infinite;
   --animate-fade-up: fade-up 0.6s ease-out both;
   --animate-fade-in: fade-in 0.4s ease-out both;
-
-  @keyframes marquee {
-    from {
-      transform: translateX(0);
-    }
-
-    to {
-      transform: translateX(calc(-100% - 2.6rem));
-    }
-  }
-
-  @keyframes marquee-reverse {
-    from {
-      transform: translateX(calc(-100% - 2.6rem));
-    }
-
-    to {
-      transform: translateX(0);
-    }
-  }
 
   @keyframes fade-up {
     from {
@@ -107,7 +73,7 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: var(--font-body);
+    font-family: var(--font-inter, "Inter"), system-ui, sans-serif;
     font-size: 1rem;
     line-height: 1.6;
   }
@@ -118,7 +84,7 @@
   h4,
   h5,
   h6 {
-    font-family: var(--font-body);
+    font-family: var(--font-inter, "Inter"), system-ui, sans-serif;
     line-height: 1.1;
     letter-spacing: -0.02em;
     font-weight: 500;
@@ -161,22 +127,6 @@
   box-shadow: var(--shadow-nav);
 }
 
-/* ── Marquee ── */
-.marquee-track {
-  display: flex;
-  gap: 2.6rem;
-  width: max-content;
-  animation: var(--animate-marquee);
-}
-
-.marquee-track.reverse {
-  animation: var(--animate-marquee-reverse);
-}
-
-.marquee-wrapper {
-  overflow: hidden;
-}
-
 /* ── Scroll Reveal ── */
 .reveal {
   opacity: 0;
@@ -212,13 +162,7 @@
   max-height: 500px;
 }
 
-/* ── Tab Active ── */
-.tab-active {
-  background: var(--color-foreground);
-  color: var(--color-background);
-}
-
-/* ── Swiper overrides (isomeet style) ── */
+/* ── Swiper overrides ── */
 .swiper-pagination-bullet {
   background: rgba(0, 0, 0, 0.1) !important;
   opacity: 1 !important;
@@ -232,19 +176,7 @@
   height: 0.8rem !important;
 }
 
-/* ── Feature Card Colors ── */
-.card-violet {
-  background-color: var(--color-violet);
-}
-
-.card-green {
-  background-color: var(--color-green);
-}
-
-.card-pink {
-  background-color: var(--color-pink);
-}
-
-.card-blue {
-  background-color: var(--color-blue);
+/* ── Hover utilities (CSS-based, replaces JS onMouseEnter/Leave) ── */
+.hover-opacity:hover {
+  opacity: 0.85;
 }

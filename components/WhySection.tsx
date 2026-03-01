@@ -72,7 +72,6 @@ export default function WhySection() {
                         className="section-heading"
                         style={{
                             margin: 0,
-                            fontFamily: "Inter, sans-serif",
                             fontWeight: 400,
                             fontSize: "3.75rem",
                             lineHeight: 1.12,
@@ -126,8 +125,7 @@ export default function WhySection() {
                             <div>
                                 <h3
                                     style={{
-                                        fontFamily: "Inter, sans-serif",
-                                        fontWeight: 500,
+                                                    fontWeight: 500,
                                         fontSize: "1.0625rem",
                                         letterSpacing: "-0.01em",
                                         color: "#000",
@@ -138,8 +136,7 @@ export default function WhySection() {
                                 </h3>
                                 <p
                                     style={{
-                                        fontFamily: "Inter, sans-serif",
-                                        fontSize: "0.9375rem",
+                                                    fontSize: "0.9375rem",
                                         fontWeight: 400,
                                         color: "rgba(0,0,0,0.55)",
                                         lineHeight: 1.6,

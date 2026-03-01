@@ -53,8 +53,7 @@ export default function NavBar() {
                     >
                         <span
                             style={{
-                                fontFamily: "Inter, sans-serif",
-                                fontWeight: 600,
+                                    fontWeight: 600,
                                 fontSize: "1rem",
                                 letterSpacing: "-0.02em",
                                 color: "#000",
@@ -81,8 +80,7 @@ export default function NavBar() {
                                 key={l.href}
                                 href={l.href}
                                 style={{
-                                    fontFamily: "Inter, sans-serif",
-                                    fontSize: "1rem",
+                                            fontSize: "1rem",
                                     fontWeight: 400,
                                     color: "rgba(0,0,0,0.4)",
                                     padding: "0.25rem 0",
@@ -112,7 +110,6 @@ export default function NavBar() {
                             display: "flex",
                             alignItems: "center",
                             justifyContent: "center",
-                            fontFamily: "Inter, sans-serif",
                             fontSize: "0.9375rem",
                             fontWeight: 500,
                             letterSpacing: "-0.01em",
@@ -183,8 +180,7 @@ export default function NavBar() {
                             onClick={() => setMenuOpen(false)}
                             style={{
                                 display: "block",
-                                fontFamily: "Inter, sans-serif",
-                                fontSize: "1rem",
+                                    fontSize: "1rem",
                                 fontWeight: 400,
                                 color: "rgba(0,0,0,0.6)",
                                 padding: "0.75rem 0",
@@ -201,7 +197,6 @@ export default function NavBar() {
                             display: "inline-flex",
                             alignItems: "center",
                             justifyContent: "center",
-                            fontFamily: "Inter, sans-serif",
                             fontSize: "0.9375rem",
                             fontWeight: 500,
                             color: "#000",

@@ -1,8 +1,18 @@
-"use client";
-
+import type { Metadata } from "next";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+    title: "Services | Gulaal International",
+    description:
+        "Explore Gulaal International's services: online retail and project management across the UAE.",
+    openGraph: {
+        title: "Services | Gulaal International",
+        description:
+            "Explore Gulaal International's services: online retail and project management across the UAE.",
+    },
+};
 
 // ── Types ──────────────────────────────────────────────────────────────────
 type BentoCardData = {
@@ -96,7 +106,6 @@ const BentoCard = ({
             <h3
                 style={{
                     margin: 0,
-                    fontFamily: "Inter, sans-serif",
                     fontWeight: 500,
                     fontSize: "1.0625rem",
                     letterSpacing: "-0.02em",
@@ -109,7 +118,6 @@ const BentoCard = ({
             <p
                 style={{
                     margin: 0,
-                    fontFamily: "Inter, sans-serif",
                     fontSize: "0.9375rem",
                     lineHeight: 1.6,
                     color: "rgba(0,0,0,0.5)",
@@ -127,7 +135,6 @@ const SectionLabel = ({ children }: { children: React.ReactNode }) => (
     <p
         style={{
             margin: 0,
-            fontFamily: "Inter, sans-serif",
             fontSize: "0.8125rem",
             fontWeight: 600,
             letterSpacing: "0.08em",
@@ -174,7 +181,6 @@ export default function ServicesPage() {
                                 padding: "0.25rem 1rem",
                                 fontSize: "0.875rem",
                                 fontWeight: 500,
-                                fontFamily: "Inter, sans-serif",
                                 color: "rgba(0,0,0,0.6)",
                                 letterSpacing: "-0.01em",
                             }}
@@ -187,7 +193,6 @@ export default function ServicesPage() {
                     <h1
                         style={{
                             margin: 0,
-                            fontFamily: "Inter, sans-serif",
                             fontWeight: 400,
                             fontSize: "3.75rem",
                             lineHeight: 1.12,
@@ -203,7 +208,6 @@ export default function ServicesPage() {
                     <p
                         style={{
                             margin: 0,
-                            fontFamily: "Inter, sans-serif",
                             fontSize: "1.125rem",
                             color: "rgba(0,0,0,0.4)",
                             lineHeight: 1.5,
@@ -246,7 +250,6 @@ export default function ServicesPage() {
                         <h2
                             style={{
                                 margin: 0,
-                                fontFamily: "Inter, sans-serif",
                                 fontWeight: 400,
                                 fontSize: "2.25rem",
                                 lineHeight: 1.2,
@@ -261,7 +264,6 @@ export default function ServicesPage() {
                         <p
                             style={{
                                 margin: 0,
-                                fontFamily: "Inter, sans-serif",
                                 fontSize: "1.0625rem",
                                 color: "rgba(0,0,0,0.4)",
                                 lineHeight: 1.6,
@@ -319,7 +321,6 @@ export default function ServicesPage() {
                         <h2
                             style={{
                                 margin: 0,
-                                fontFamily: "Inter, sans-serif",
                                 fontWeight: 400,
                                 fontSize: "2.25rem",
                                 lineHeight: 1.2,
@@ -334,7 +335,6 @@ export default function ServicesPage() {
                         <p
                             style={{
                                 margin: 0,
-                                fontFamily: "Inter, sans-serif",
                                 fontSize: "1.0625rem",
                                 color: "rgba(0,0,0,0.4)",
                                 lineHeight: 1.6,
@@ -393,7 +393,6 @@ export default function ServicesPage() {
                         <p
                             style={{
                                 margin: 0,
-                                fontFamily: "Inter, sans-serif",
                                 fontSize: "1rem",
                                 color: "rgba(0,0,0,0.4)",
                                 letterSpacing: "-0.01em",
@@ -403,13 +402,13 @@ export default function ServicesPage() {
                         </p>
                         <Link
                             href="/#contact"
+                            className="hover-opacity"
                             style={{
                                 display: "inline-flex",
                                 alignItems: "center",
                                 gap: "0.5rem",
                                 background: "#000",
                                 color: "#fff",
-                                fontFamily: "Inter, sans-serif",
                                 fontSize: "1rem",
                                 fontWeight: 500,
                                 padding: "0.875rem 1.5rem",
@@ -420,12 +419,6 @@ export default function ServicesPage() {
                                 whiteSpace: "nowrap",
                                 flexShrink: 0,
                             }}
-                            onMouseEnter={(e) =>
-                                (e.currentTarget.style.opacity = "0.8")
-                            }
-                            onMouseLeave={(e) =>
-                                (e.currentTarget.style.opacity = "1")
-                            }
                         >
                             Get in Touch →
                         </Link>

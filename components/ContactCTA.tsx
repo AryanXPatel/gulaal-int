@@ -26,6 +26,31 @@ const faqs = [
 
 export default function ContactCTA() {
     const [openFaq, setOpenFaq] = useState<number | null>(null);
+    const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        setStatus("loading");
+
+        const formData = new FormData(e.currentTarget);
+        formData.append("access_key", "e0f60d2b-c111-4c3d-beb9-a0f15e511270");
+
+        try {
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData,
+            });
+            const data = await response.json();
+            if (data.success) {
+                setStatus("success");
+                (e.target as HTMLFormElement).reset();
+            } else {
+                setStatus("error");
+            }
+        } catch {
+            setStatus("error");
+        }
+    };
 
     return (
         <section
@@ -50,7 +75,7 @@ export default function ContactCTA() {
                         <div style={{ marginBottom: "2.5rem", display: "flex", flexDirection: "column", gap: "1.5rem" }}>
                             {/* Pill label */}
                             <div style={{ display: "inline-flex" }}>
-                                <div style={{ border: "1px solid rgba(0,0,0,0.1)", borderRadius: "0.5rem", padding: "0.25rem 1rem", fontSize: "0.875rem", fontWeight: 500, fontFamily: "Inter, sans-serif", color: "rgba(0,0,0,0.6)", letterSpacing: "-0.01em" }}>
+                                <div style={{ border: "1px solid rgba(0,0,0,0.1)", borderRadius: "0.5rem", padding: "0.25rem 1rem", fontSize: "0.875rem", fontWeight: 500, color: "rgba(0,0,0,0.6)", letterSpacing: "-0.01em" }}>
                                     Contact
                                 </div>
                             </div>
@@ -58,7 +83,6 @@ export default function ContactCTA() {
                                 className="section-heading"
                                 style={{
                                     margin: 0,
-                                    fontFamily: "Inter, sans-serif",
                                     fontWeight: 400,
                                     fontSize: "3.75rem",
                                     lineHeight: 1.12,
@@ -81,7 +105,6 @@ export default function ContactCTA() {
                         >
                             <h3
                                 style={{
-                                    fontFamily: "Inter, sans-serif",
                                     fontWeight: 500,
                                     fontSize: "1.125rem",
                                     letterSpacing: "-0.01em",
@@ -93,18 +116,23 @@ export default function ContactCTA() {
                             </h3>
 
                             <form
-                                onSubmit={(e) => e.preventDefault()}
+                                onSubmit={handleSubmit}
                                 style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
                             >
+                                <input type="hidden" name="from_name" value="Gulaal International Website" />
+                                <input type="hidden" name="replyto" value="contact@gulaal-international.ae" />
+                                <input type="checkbox" name="botcheck" className="hidden" style={{ display: "none" }} tabIndex={-1} autoComplete="off" />
                                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }}>
                                     <input
                                         type="text"
+                                        name="first_name"
                                         placeholder="First name"
                                         required
                                         style={inputStyle}
                                     />
                                     <input
                                         type="text"
+                                        name="last_name"
                                         placeholder="Last name"
                                         required
                                         style={inputStyle}
@@ -112,6 +140,7 @@ export default function ContactCTA() {
                                 </div>
                                 <input
                                     type="email"
+                                    name="email"
                                     placeholder="Your email"
                                     required
                                     style={inputStyle}
@@ -120,7 +149,6 @@ export default function ContactCTA() {
                                 <div>
                                     <label
                                         style={{
-                                            fontFamily: "Inter, sans-serif",
                                             fontSize: "0.875rem",
                                             color: "rgba(0,0,0,0.6)",
                                             display: "block",
@@ -138,7 +166,6 @@ export default function ContactCTA() {
                                                     alignItems: "center",
                                                     gap: "0.625rem",
                                                     cursor: "pointer",
-                                                    fontFamily: "Inter, sans-serif",
                                                     fontSize: "0.9375rem",
                                                     color: "#000",
                                                 }}
@@ -157,6 +184,7 @@ export default function ContactCTA() {
 
                                 <button
                                     type="submit"
+                                    disabled={status === "loading"}
                                     style={{
                                         display: "inline-flex",
                                         alignItems: "center",
@@ -164,23 +192,34 @@ export default function ContactCTA() {
                                         gap: "0.5rem",
                                         background: "#000",
                                         color: "#fff",
-                                        fontFamily: "Inter, sans-serif",
                                         fontSize: "1rem",
                                         fontWeight: 500,
                                         padding: "1rem 1.25rem",
                                         borderRadius: "5rem",
                                         border: "none",
-                                        cursor: "pointer",
+                                        cursor: status === "loading" ? "not-allowed" : "pointer",
                                         marginTop: "0.5rem",
                                         lineHeight: 1,
                                         transition: "opacity 0.15s",
                                         whiteSpace: "nowrap",
+                                        opacity: status === "loading" ? 0.6 : 1,
                                     }}
-                                    onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.85")}
-                                    onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
+                                    onMouseEnter={(e) => { if (status !== "loading") e.currentTarget.style.opacity = "0.85"; }}
+                                    onMouseLeave={(e) => { if (status !== "loading") e.currentTarget.style.opacity = "1"; }}
                                 >
-                                    Book a Free Call
+                                    {status === "loading" ? "Sending..." : "Book a Free Call"}
                                 </button>
+
+                                {status === "success" && (
+                                    <p style={{ fontSize: "0.875rem", color: "#16a34a", margin: 0 }}>
+                                        Thank you. We will get back to you shortly.
+                                    </p>
+                                )}
+                                {status === "error" && (
+                                    <p style={{ fontSize: "0.875rem", color: "#dc2626", margin: 0 }}>
+                                        Something went wrong. Please try again or email us directly.
+                                    </p>
+                                )}
                             </form>
                         </div>
                     </div>
@@ -212,7 +251,6 @@ export default function ContactCTA() {
                                     >
                                         <span
                                             style={{
-                                                fontFamily: "Inter, sans-serif",
                                                 fontSize: "0.9375rem",
                                                 fontWeight: 400,
                                                 color: "#000",
@@ -263,7 +301,6 @@ export default function ContactCTA() {
                                     >
                                         <p
                                             style={{
-                                                fontFamily: "Inter, sans-serif",
                                                 fontSize: "0.9375rem",
                                                 color: "rgba(0,0,0,0.55)",
                                                 lineHeight: 1.6,
@@ -292,7 +329,6 @@ export default function ContactCTA() {
 }
 
 const inputStyle: React.CSSProperties = {
-    fontFamily: "Inter, sans-serif",
     fontSize: "0.9375rem",
     padding: "0.75rem 1rem",
     border: "1px solid rgba(0,0,0,0.12)",

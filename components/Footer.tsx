@@ -31,13 +31,12 @@ export default function Footer() {
                     {/* Logo + tagline */}
                     <div style={{ maxWidth: "22rem" }}>
                         <Link href="/" style={{ display: "flex", alignItems: "center", marginBottom: "0.875rem" }}>
-                            <span style={{ fontFamily: "Inter, sans-serif", fontWeight: 600, fontSize: "1rem", letterSpacing: "-0.02em" }}>
+                            <span style={{ fontWeight: 600, fontSize: "1rem", letterSpacing: "-0.02em" }}>
                                 Gulaal International
                             </span>
                         </Link>
                         <p
                             style={{
-                                fontFamily: "Inter, sans-serif",
                                 fontSize: "0.875rem",
                                 color: "rgba(0,0,0,0.5)",
                                 lineHeight: 1.6,
@@ -52,7 +51,6 @@ export default function Footer() {
                         <div>
                             <div
                                 style={{
-                                    fontFamily: "Inter, sans-serif",
                                     fontSize: "0.8125rem",
                                     fontWeight: 500,
                                     color: "rgba(0,0,0,0.4)",
@@ -74,7 +72,6 @@ export default function Footer() {
                                         key={l.href}
                                         href={l.href}
                                         style={{
-                                            fontFamily: "Inter, sans-serif",
                                             fontSize: "0.9375rem",
                                             color: "rgba(0,0,0,0.7)",
                                             transition: "color 0.2s",
@@ -91,7 +88,6 @@ export default function Footer() {
                         <div>
                             <div
                                 style={{
-                                    fontFamily: "Inter, sans-serif",
                                     fontSize: "0.8125rem",
                                     fontWeight: 500,
                                     color: "rgba(0,0,0,0.4)",
@@ -105,7 +101,6 @@ export default function Footer() {
                             <a
                                 href="mailto:hello@gulaalinternational.com"
                                 style={{
-                                    fontFamily: "Inter, sans-serif",
                                     fontSize: "0.9375rem",
                                     color: "rgba(0,0,0,0.7)",
                                     transition: "color 0.2s",
@@ -137,17 +132,16 @@ export default function Footer() {
             >
                 <div
                     style={{
-                        fontFamily: "Inter, sans-serif",
                         fontSize: "0.875rem",
                         color: "rgba(0,0,0,0.4)",
                     }}
                 >
-                    @2026 Gulaal International.
+                    &copy; 2026 Gulaal International.
                 </div>
 
                 {/* Social */}
                 <div style={{ display: "flex", alignItems: "center", gap: "1rem" }}>
-                    <span style={{ fontFamily: "Inter, sans-serif", fontSize: "0.875rem", color: "rgba(0,0,0,0.4)" }}>
+                    <span style={{ fontSize: "0.875rem", color: "rgba(0,0,0,0.4)" }}>
                         Follow us:
                     </span>
                     <a

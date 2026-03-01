@@ -111,7 +111,6 @@ const BentoCard = ({
             <h3
                 style={{
                     margin: 0,
-                    fontFamily: "Inter, sans-serif",
                     fontWeight: 500,
                     fontSize: "1.0625rem",
                     letterSpacing: "-0.02em",
@@ -124,7 +123,6 @@ const BentoCard = ({
             <p
                 style={{
                     margin: 0,
-                    fontFamily: "Inter, sans-serif",
                     fontSize: "0.9375rem",
                     lineHeight: 1.6,
                     color: "rgba(0,0,0,0.5)",
@@ -144,7 +142,6 @@ const BentoCard = ({
                     padding: "0.2rem 0.625rem",
                     fontSize: "0.75rem",
                     fontWeight: 500,
-                    fontFamily: "Inter, sans-serif",
                     color: "rgba(0,0,0,0.45)",
                     letterSpacing: "-0.01em",
                 }}
@@ -191,7 +188,6 @@ export default function Services() {
                                 padding: "0.25rem 1rem",
                                 fontSize: "0.875rem",
                                 fontWeight: 500,
-                                fontFamily: "Inter, sans-serif",
                                 color: "rgba(0,0,0,0.6)",
                                 letterSpacing: "-0.01em",
                             }}
@@ -212,7 +208,6 @@ export default function Services() {
                             className="section-heading"
                             style={{
                                 margin: 0,
-                                fontFamily: "Inter, sans-serif",
                                 fontWeight: 400,
                                 fontSize: "3.75rem",
                                 lineHeight: 1.12,
@@ -225,7 +220,6 @@ export default function Services() {
                         <p
                             style={{
                                 margin: 0,
-                                fontFamily: "Inter, sans-serif",
                                 fontSize: "1.125rem",
                                 color: "rgba(0,0,0,0.4)",
                                 lineHeight: 1.5,
@@ -243,7 +237,6 @@ export default function Services() {
                     <p
                         style={{
                             margin: 0,
-                            fontFamily: "Inter, sans-serif",
                             fontSize: "0.8125rem",
                             fontWeight: 600,
                             letterSpacing: "0.08em",
@@ -283,7 +276,6 @@ export default function Services() {
                     <p
                         style={{
                             margin: 0,
-                            fontFamily: "Inter, sans-serif",
                             fontSize: "0.8125rem",
                             fontWeight: 600,
                             letterSpacing: "0.08em",
@@ -333,7 +325,6 @@ export default function Services() {
                     <p
                         style={{
                             margin: 0,
-                            fontFamily: "Inter, sans-serif",
                             fontSize: "1rem",
                             color: "rgba(0,0,0,0.4)",
                             letterSpacing: "-0.01em",
@@ -350,7 +341,6 @@ export default function Services() {
                             gap: "0.5rem",
                             background: "#000",
                             color: "#fff",
-                            fontFamily: "Inter, sans-serif",
                             fontSize: "1rem",
                             fontWeight: 500,
                             padding: "0.875rem 1.5rem",

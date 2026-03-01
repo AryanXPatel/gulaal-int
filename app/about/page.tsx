@@ -1,7 +1,18 @@
-"use client";
+import type { Metadata } from "next";
 import Link from "next/link";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+    title: "About | Gulaal International",
+    description:
+        "Learn about Gulaal International, a UAE-based company specializing in online retail and project management across the Gulf region.",
+    openGraph: {
+        title: "About | Gulaal International",
+        description:
+            "Learn about Gulaal International, a UAE-based company specializing in online retail and project management.",
+    },
+};
 
 /* ─── SVG Icons for Values Cards ─── */
 const ShieldIcon = () => (
@@ -62,7 +73,7 @@ const highlights = [
 
 export default function AboutPage() {
     return (
-        <>
+        <main>
             <NavBar />
 
             {/* ════════════════════════════════════════════════
@@ -102,7 +113,6 @@ export default function AboutPage() {
                                     padding: "0.25rem 1rem",
                                     fontSize: "0.875rem",
                                     fontWeight: 500,
-                                    fontFamily: "Inter, sans-serif",
                                     color: "rgba(0,0,0,0.6)",
                                     letterSpacing: "-0.01em",
                                 }}
@@ -116,7 +126,6 @@ export default function AboutPage() {
                             className="about-hero-heading"
                             style={{
                                 margin: 0,
-                                fontFamily: "Inter, sans-serif",
                                 fontWeight: 400,
                                 fontSize: "3.75rem",
                                 lineHeight: 1.12,
@@ -131,7 +140,6 @@ export default function AboutPage() {
                         <p
                             style={{
                                 margin: 0,
-                                fontFamily: "Inter, sans-serif",
                                 fontSize: "1.125rem",
                                 fontWeight: 400,
                                 color: "rgba(0,0,0,0.4)",
@@ -169,7 +177,6 @@ export default function AboutPage() {
                                 padding: "0.25rem 1rem",
                                 fontSize: "0.875rem",
                                 fontWeight: 500,
-                                fontFamily: "Inter, sans-serif",
                                 color: "rgba(0,0,0,0.6)",
                                 letterSpacing: "-0.01em",
                             }}
@@ -192,7 +199,6 @@ export default function AboutPage() {
                             <p
                                 style={{
                                     margin: 0,
-                                    fontFamily: "Inter, sans-serif",
                                     fontSize: "1.5rem",
                                     fontWeight: 400,
                                     color: "#000",
@@ -221,7 +227,6 @@ export default function AboutPage() {
                                         border: "1px solid rgba(0,0,0,0.08)",
                                         borderRadius: "1rem",
                                         padding: "1.25rem 1.5rem",
-                                        fontFamily: "Inter, sans-serif",
                                         fontSize: "1rem",
                                         fontWeight: 500,
                                         color: "#000",
@@ -279,7 +284,6 @@ export default function AboutPage() {
                                     padding: "0.25rem 1rem",
                                     fontSize: "0.875rem",
                                     fontWeight: 500,
-                                    fontFamily: "Inter, sans-serif",
                                     color: "rgba(0,0,0,0.6)",
                                     letterSpacing: "-0.01em",
                                 }}
@@ -291,7 +295,6 @@ export default function AboutPage() {
                             className="about-section-heading"
                             style={{
                                 margin: 0,
-                                fontFamily: "Inter, sans-serif",
                                 fontWeight: 400,
                                 fontSize: "3.75rem",
                                 lineHeight: 1.12,
@@ -342,7 +345,6 @@ export default function AboutPage() {
                                 <div>
                                     <h3
                                         style={{
-                                            fontFamily: "Inter, sans-serif",
                                             fontWeight: 500,
                                             fontSize: "1.0625rem",
                                             letterSpacing: "-0.01em",
@@ -354,7 +356,6 @@ export default function AboutPage() {
                                     </h3>
                                     <p
                                         style={{
-                                            fontFamily: "Inter, sans-serif",
                                             fontSize: "0.9375rem",
                                             fontWeight: 400,
                                             color: "rgba(0,0,0,0.55)",
@@ -398,7 +399,6 @@ export default function AboutPage() {
                         className="about-section-heading"
                         style={{
                             margin: 0,
-                            fontFamily: "Inter, sans-serif",
                             fontWeight: 400,
                             fontSize: "3.75rem",
                             lineHeight: 1.12,
@@ -410,6 +410,7 @@ export default function AboutPage() {
                     </h2>
                     <Link
                         href="/#contact"
+                        className="hover-opacity"
                         style={{
                             font: "inherit",
                             border: "none",
@@ -424,13 +425,10 @@ export default function AboutPage() {
                             gap: "0.5rem",
                             fontSize: "1rem",
                             fontWeight: 500,
-                            fontFamily: "Inter, sans-serif",
                             whiteSpace: "nowrap",
                             transition: "opacity 0.15s",
                             textDecoration: "none",
                         }}
-                        onMouseEnter={(e) => (e.currentTarget.style.opacity = "0.85")}
-                        onMouseLeave={(e) => (e.currentTarget.style.opacity = "1")}
                     >
                         Get in Touch
                     </Link>
@@ -490,6 +488,6 @@ export default function AboutPage() {
                     }
                 }
             `}</style>
-        </>
+        </main>
     );
 }

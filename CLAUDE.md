@@ -4,7 +4,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Gulaal International marketing website for a UAE-based online retail and project management company. A 3-page static Next.js site with no backend, API routes, or database. Built to look professional and legitimate for business permit approvals.
+Gulaal International marketing website for a UAE-based online retail and project management company. A 3-page static Next.js site with no backend or database. Built to look professional and legitimate for business permit approvals.
+
+**Domain:** `gulaal-international.ae`
+**Contact email:** `contact@gulaal-international.ae`
 
 ## Commands
 
@@ -16,11 +19,11 @@ npm run lint     # ESLint (next/core-web-vitals + typescript)
 
 ## Tech Stack
 
-- **Next.js 16** (App Router) / **React 19** / **TypeScript**
+- **Next.js 16.1.6** (App Router) / **React 19** / **TypeScript**
 - **Tailwind CSS v4** (via `@tailwindcss/postcss`), but most components use **inline styles**, not Tailwind classes
-- **motion** (Framer Motion) for scroll animations
-- **swiper** for Hero image sliders (horizontal + vertical creative)
+- **swiper** for Hero image slider (horizontal autoplay carousel)
 - **agentation** for dev-only visual feedback toolbar (conditionally rendered in layout)
+- **Web3Forms** for contact form submission (API-based, no backend needed)
 
 ## Architecture
 
@@ -28,16 +31,26 @@ npm run lint     # ESLint (next/core-web-vitals + typescript)
 
 ```
 /           → NavBar → Hero → WhySection → Services → ContactCTA → Footer
-/about      → NavBar → Hero → Mission → Values → CTA → Footer
-/services   → NavBar → Hero → Online Retail → Project Management → CTA → Footer
+/about      → NavBar → PageAnimations → Hero → Mission → Values → CTA → Footer
+/services   → NavBar → PageAnimations → Hero → Online Retail → Project Management → CTA → Footer
 ```
 
+### File Structure
+
 - `app/layout.tsx` — Root layout with metadata, Google Fonts (Inter only), Agentation dev toolbar
-- `app/page.tsx` — Landing page composing section components
-- `app/about/page.tsx` — About page (self-contained, inline styles)
-- `app/services/page.tsx` — Services page (self-contained, inline styles)
+- `app/page.tsx` — Landing page composing section components (Hero loaded via `next/dynamic`)
+- `app/about/page.tsx` — About page (server component, self-contained sections, inline styles)
+- `app/services/page.tsx` — Services page (server component, self-contained sections, inline styles)
 - `app/globals.css` — Tailwind v4 `@theme` tokens, custom utilities, Swiper overrides, scroll reveal classes
-- `components/` — One file per landing page section, all `"use client"`
+- `app/sitemap.ts` — Sitemap for `gulaal-international.ae`
+- `app/robots.ts` — Robots.txt config
+- `components/Hero.tsx` — Hero section with Swiper slider (`"use client"`)
+- `components/WhySection.tsx` — Why section with IntersectionObserver scroll reveals (`"use client"`)
+- `components/Services.tsx` — Bento grid service cards (`"use client"`)
+- `components/ContactCTA.tsx` — Contact form with Web3Forms integration (`"use client"`)
+- `components/NavBar.tsx` — Fixed navbar with glassmorphism, mobile hamburger menu (`"use client"`)
+- `components/Footer.tsx` — Footer with contact info, nav links, Instagram social link (`"use client"`)
+- `components/PageAnimations.tsx` — Scroll-reveal activator for server component pages (`"use client"`, renders null)
 - `public/gulaal/` — Gulaal brand images (PNG)
 - `public/isomeet/` — Legacy ISOMEET assets (some still referenced by Hero sliders)
 
@@ -74,8 +87,10 @@ Path alias: `@/*` maps to project root.
 
 ## Key Patterns
 
-- All components are client components (`"use client"`)
-- Scroll-reveal animations: `IntersectionObserver` with opacity/transform transitions (WhySection)
-- Contact form has `onSubmit={(e) => e.preventDefault()}` (non-functional, no backend)
+- Landing page components are `"use client"` with hooks and interactivity
+- About and Services pages are **server components** that export `metadata` for SEO; they use `PageAnimations` (a client component) for scroll-reveal activation
+- Scroll-reveal animations: CSS `.fade-in-up` / `.visible` classes activated by `IntersectionObserver` (in `PageAnimations.tsx` and `WhySection.tsx`)
+- Contact form submits to Web3Forms API (`https://api.web3forms.com/submit`) with loading/success/error states and auto-dismiss messages
+- NavBar: fixed position, glassmorphism (`backdrop-filter: blur`), scroll-aware class toggle at `scrollY > 50`, mobile hamburger at 767px
 - Multi-page routing uses Next.js `<Link>` components
-- About and Services pages import shared `NavBar` and `Footer` components
+- Hero component is dynamically imported via `next/dynamic` on the landing page
